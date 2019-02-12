@@ -11,8 +11,6 @@
         public ViewCreatorException(string errorCode, string message) : base(message)
         {
             this._errorCode = errorCode;
-
-
         }
     }
 }
