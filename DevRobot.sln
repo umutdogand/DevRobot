@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCreator", "src\ViewCreator\ViewCreator.csproj", "{4196EC19-F082-40E4-A70B-5F7A3D83FE9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCreator.Test", "src\ViewCreator.Test\ViewCreator.Test.csproj", "{65B76B9D-AE53-460B-92DE-AE3343FA6625}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4196EC19-F082-40E4-A70B-5F7A3D83FE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4196EC19-F082-40E4-A70B-5F7A3D83FE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4196EC19-F082-40E4-A70B-5F7A3D83FE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4196EC19-F082-40E4-A70B-5F7A3D83FE9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B76B9D-AE53-460B-92DE-AE3343FA6625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B76B9D-AE53-460B-92DE-AE3343FA6625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B76B9D-AE53-460B-92DE-AE3343FA6625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B76B9D-AE53-460B-92DE-AE3343FA6625}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D26F2F26-FC0C-4627-94AC-433D5CDF41E5}
+	EndGlobalSection
+EndGlobal
