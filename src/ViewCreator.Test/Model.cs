@@ -6,7 +6,7 @@
     public class Model
     {
         [Label(For = "testButton")]
-        [Button(Name = "testButton")]
+        [Button(Name = "testButton", Class = "test")]
         public int Id { get; set; }
     }
 }

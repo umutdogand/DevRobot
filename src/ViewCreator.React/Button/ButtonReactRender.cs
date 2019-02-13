@@ -13,9 +13,19 @@
 
             if (e.RenderingObject?.Component is IButton button && e.RenderingObject?.PropertyInfo is PropertyInfo info)
             {
-                content = $"<button name={button.Name}></button>";
-
-                // attributelarının atanması işlemi 
+                content = $@"
+class Button extends React.Component {{
+  constructor(props) {{
+    super(props);
+  }}
+  render() {{
+    return (
+      <button name={{this.props.Name}} 
+              className={{this.props.Class}} 
+              style={{this.props.Style}}></button>
+    );
+  }}
+}}";
             }
 
             return new StringBuilder(content);

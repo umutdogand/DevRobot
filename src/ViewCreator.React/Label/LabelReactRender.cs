@@ -13,9 +13,21 @@
 
             if (e.RenderingObject?.Component is ILabel label && e.RenderingObject?.PropertyInfo is PropertyInfo info)
             {
-                content = $"<label for={label.For}></label>";
-
-                // attributelarının atanması işlemi 
+                content = $@"
+class Button extends React.Component {{
+  constructor(props) {{
+    super(props);
+  }}
+  render() {{
+    return (
+      <label id={{this.props.Id}} 
+             name={{this.props.Name}} 
+             className={{this.props.Class}} 
+             style={{this.props.Style}}
+             for={{this.props.For}}></label>
+    );
+  }}
+}}";
             }
 
             return new StringBuilder(content);
