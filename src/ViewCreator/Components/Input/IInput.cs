@@ -25,6 +25,6 @@
         string Size { get; set; }
         string Src { get; set; }
         string Width { get; set; }
-        InputType Type { get; set; }
+        string Type { get; set; }
     }
 }

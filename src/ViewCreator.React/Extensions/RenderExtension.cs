@@ -34,6 +34,7 @@
             reactBuilder.AddOrUpdateComponent<ButtonAttribute, ButtonReactRender>();
             reactBuilder.AddOrUpdateComponent<LinearLayoutAttribute, LinearLayoutReactRender>();
             reactBuilder.AddOrUpdateComponent<LabelAttribute, LabelReactRender>();
+            reactBuilder.AddOrUpdateComponent<InputAttribute, InputReactRender>();
 
             applicationBuilder.UseMiddleware<ReactMiddleware>();
         }

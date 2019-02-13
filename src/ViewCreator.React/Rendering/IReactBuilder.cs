@@ -4,5 +4,6 @@
 
     public interface IReactBuilder : IViewBuilder
     {
+        IReactBuilder SetReactFileUrl(string url);
     }
 }

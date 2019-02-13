@@ -16,6 +16,11 @@
 
         #endregion
 
+        public static IHtmlFeature Type(string type)
+        {
+            return new HtmlFeature(TypeKey, type);
+        }
+
         public static IHtmlFeature Name(string name)
         {
             return new HtmlFeature(NameKey, name);

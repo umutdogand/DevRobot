@@ -9,11 +9,6 @@
         public const string FormKey = "form";
         public const string FormActionKey = "formaction";
 
-        public static IHtmlFeature Type(ButtonType type)
-        {
-            return new HtmlFeature(TypeKey, type.Value);
-        }
-
         public static IHtmlFeature Value(string value)
         {
             return new HtmlFeature(ValueKey, value);

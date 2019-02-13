@@ -21,10 +21,6 @@
         public const string SrcKey = "src";
         public const string WidthKey = "width";
 
-        public static IHtmlFeature Type(InputType type)
-        {
-            return new HtmlFeature(TypeKey, type.Value);
-        }
         public static IHtmlFeature Accept(string value)
         {
             return new HtmlFeature(AcceptKey, value);

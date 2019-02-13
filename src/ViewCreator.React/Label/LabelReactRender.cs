@@ -14,7 +14,7 @@
             if (e.RenderingObject?.Component is ILabel label && e.RenderingObject?.PropertyInfo is PropertyInfo info)
             {
                 content = $@"
-class Button extends React.Component {{
+class Label extends React.Component {{
   constructor(props) {{
     super(props);
   }}

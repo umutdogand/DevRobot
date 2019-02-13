@@ -12,7 +12,7 @@
 
             if (e.RenderingObject?.Component is IInput input && e.RenderingObject?.PropertyInfo is PropertyInfo info)
             {
-                content = $"<input type={input.Type?.Value} name={input.Name}/>";
+                content = $"<input type={input.Type} name={input.Name}/>";
 
                 // attributelarının atanması işlemi 
             }

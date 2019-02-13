@@ -20,6 +20,7 @@ class Button extends React.Component {{
   }}
   render() {{
     return (
+<Button><Button>
       <button name={{this.props.Name}} 
               className={{this.props.Class}} 
               style={{this.props.Style}}></button>

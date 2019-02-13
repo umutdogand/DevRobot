@@ -6,7 +6,7 @@
 
         string Value { get; set; }
 
-        ButtonType Type { get; set; }
+        string Type { get; set; }
 
         string Autofocus { get; set; }
 

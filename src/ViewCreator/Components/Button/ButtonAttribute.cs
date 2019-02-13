@@ -17,9 +17,9 @@
             set { SetFeature(HtmlFeaturesFactory.Value(value)); }
         }
 
-        public ButtonType Type
+        public string Type
         {
-            get { return GetFeature<ButtonType>(HtmlFeaturesFactory.TypeKey); }
+            get { return GetFeature<String>(HtmlFeaturesFactory.TypeKey); }
             set { SetFeature(HtmlFeaturesFactory.Type(value)); }
         }
 

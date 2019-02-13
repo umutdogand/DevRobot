@@ -41,7 +41,9 @@
         static void Main(string[] args)
         {
             IServiceCollection services = new ServiceCollection();
-            IViewBuilder renderBuilder = services.AddReact();
+            IViewBuilder renderBuilder = services.AddReact()
+                                            .SetReactFileUrl("/react-render.js")
+                                            .SetMinify(true);
 
             IServiceProvider serviceProvider = services.BuildServiceProvider();
             TestApp testApp = new TestApp();

@@ -10,6 +10,14 @@
 
     public class ReactBuilder : RenderBuilder, IReactBuilder
     {
+        public string ReactFileUrl { get; set; } = "/react-render.js";
+
+        public IReactBuilder SetReactFileUrl(string url)
+        {
+            this.ReactFileUrl = url;
+            return this;
+        }
+
         /*
          * Uygulamaya özel react ayarlarının yapıldığı sınıf
          */

@@ -1,10 +1,12 @@
 ﻿namespace ViewCreator.Components
 {
     using System;
+
     [AttributeUsage(AttributeTargets.Property , AllowMultiple = true, Inherited = true)]
     public class InputAttribute : HtmlComponent, IInput
     {
         public InputAttribute() { }
+
         public string Accept
         {
             get { return GetFeature<String>(HtmlFeaturesFactory.AcceptKey); }
@@ -120,9 +122,9 @@
             get { return GetFeature<String>(HtmlFeaturesFactory.WidthKey); }
             set { SetFeature(HtmlFeaturesFactory.Width(value)); }
         }
-        public InputType Type
+        public string Type
         {
-            get { return GetFeature<InputType>(HtmlFeaturesFactory.TypeKey); }
+            get { return GetFeature<String>(HtmlFeaturesFactory.TypeKey); }
             set { SetFeature(HtmlFeaturesFactory.Type(value)); }
         }
     }

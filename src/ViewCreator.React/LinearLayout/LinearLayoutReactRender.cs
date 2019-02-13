@@ -21,10 +21,11 @@
                 if (component == null || info == null)
                     continue;
 
-                var componentRender = ViewBuilder.FindRender(component);
-                content += componentRender.Render(renderingObj, ViewBuilder);
-
-                stringBuilder.Append(content);
+                if(ViewBuilder.FindRender(component) is IRender componentRender)
+                {
+                    content += componentRender.Render(renderingObj, ViewBuilder);
+                    stringBuilder.Append(content);
+                }
             }
 
             content += "</div>";

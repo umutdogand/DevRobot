@@ -69,9 +69,9 @@
             return Features.GetValue(name);
         }
 
-        public T GetFeature<T>(string name) where T : class
+        public T GetFeature<T>(string name)
         {
-            return GetFeature(name) as T;
+            return (T)GetFeature(name);
         }
     }
 }
