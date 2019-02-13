@@ -10,7 +10,6 @@
 
     public class ReactBuilder : RenderBuilder, IReactBuilder
     {
-
         /*
          * Uygulamaya özel react ayarlarının yapıldığı sınıf
          */
@@ -18,8 +17,7 @@
         /*
          * Minimizing eklenmeli
          */
-
-        public override StringBuilder Render(IServiceProvider provider)
+        public override StringBuilder Rendering(IServiceProvider provider)
         {
             var viewBuilder = provider.GetService<IViewBuilder>();
 

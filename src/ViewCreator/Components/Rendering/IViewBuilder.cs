@@ -10,10 +10,14 @@
     {
         IRender FindRender(IHtmlComponent component);
 
-        void AddOrUpdateComponent<T1, T2>() where T1 : IHtmlComponent where T2 : IRender;
+        IViewBuilder AddOrUpdateComponent<T1, T2>() where T1 : IHtmlComponent where T2 : IRender;
 
-        void AddAssembly(Assembly assembly);
+        IViewBuilder AddAssembly(Assembly assembly);
+
+        IViewBuilder SetMinify(bool minify);
 
         StringBuilder Render(IServiceProvider provider);
+
+        StringBuilder Rendering(IServiceProvider provider);
     }
 }
