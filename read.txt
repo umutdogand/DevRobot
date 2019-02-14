@@ -1,0 +1,10 @@
+* attribute üreten fonk
+* middleware
+* component e place ekle
+* linear layout
+* builder pattern assembly, add class
+* button component reactjs hazirla
+* Render class düzelt
+* htmlfeature attr
+* her property üzerindei attr için 1 render nesnesi üretilecek 
+* Name generate olacak ve property adi olacaktir

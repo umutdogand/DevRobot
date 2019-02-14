@@ -28,34 +28,3 @@ class Label extends React.Component {
         );
     }
 }
-
-class LinerLayout {
-
-}
-
-class ModelComponentLayot extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <Button props="{this.prop.ButtonObj}"></Button>
-            <Label props="{this.prop.ButtonObj}"></Label>
-            <Input><Input>
-        );
-    }
-}
-
-
-
-
-const rootElement = document.getElementById('root');
-
-ReactDOM.render(
-
-    <ModelComponentLayot>
-                    <Button props="{this.prop.ButtonObj}"></Button>
-                    <Label props="{this.prop.ButtonObj}"></Label>
-                    <Input><Input>
-        </ModelComponentLayot > 
-    rootElement);
