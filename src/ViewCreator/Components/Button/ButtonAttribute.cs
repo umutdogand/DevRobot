@@ -5,12 +5,6 @@
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
     public class ButtonAttribute : HtmlComponent, IButton
     {
-        public string Name
-        {
-            get { return GetFeature<String>(HtmlFeaturesFactory.NameKey); }
-            set { SetFeature(HtmlFeaturesFactory.Name(value)); }
-        }
-
         public string Value
         {
             get { return GetFeature<String>(HtmlFeaturesFactory.ValueKey); }

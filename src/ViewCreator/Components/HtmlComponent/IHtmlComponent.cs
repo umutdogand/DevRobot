@@ -10,6 +10,8 @@
 
         string Style { get; set; }
 
+        string Name { get; set; }
+
         string OnMouseDown { get; set; }
 
         string OnMouseMove { get; set; }

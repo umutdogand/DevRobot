@@ -18,6 +18,12 @@
             set { SetFeature(HtmlFeaturesFactory.Style(value)); }
         }
 
+        public string Name
+        {
+            get { return GetFeature<String>(HtmlFeaturesFactory.NameKey); }
+            set { SetFeature(HtmlFeaturesFactory.Name(value)); }
+        }
+
         public string OnMouseDown
         {
             get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseDownKey); }

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCreator.Test", "src\Vie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCreator.React", "src\ViewCreator.React\ViewCreator.React.csproj", "{361C4C77-558D-4EC6-82C6-16E2D3524496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewCreator.TestMvc", "src\ViewCreator.TestMvc\ViewCreator.TestMvc.csproj", "{785D2C44-155F-4B85-8AAE-AE681D47E386}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewCreator.TestMvc", "src\ViewCreator.TestMvc\ViewCreator.TestMvc.csproj", "{785D2C44-155F-4B85-8AAE-AE681D47E386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewCreator.React.UI", "src\ViewCreator.React.UI\ViewCreator.React.UI.csproj", "{3AAF2F72-CCE2-45E6-B68D-44070ABF0A68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{785D2C44-155F-4B85-8AAE-AE681D47E386}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785D2C44-155F-4B85-8AAE-AE681D47E386}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785D2C44-155F-4B85-8AAE-AE681D47E386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AAF2F72-CCE2-45E6-B68D-44070ABF0A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AAF2F72-CCE2-45E6-B68D-44070ABF0A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AAF2F72-CCE2-45E6-B68D-44070ABF0A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AAF2F72-CCE2-45E6-B68D-44070ABF0A68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
