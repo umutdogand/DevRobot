@@ -2,8 +2,6 @@
 {
     public interface IButton : IHtmlComponent
     {
-        string Name { get; set; }
-
         string Value { get; set; }
 
         string Type { get; set; }

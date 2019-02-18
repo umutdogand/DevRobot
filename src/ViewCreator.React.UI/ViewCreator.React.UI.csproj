@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Button\Button.js" />
+    <None Remove="Input\Input.js" />
+    <None Remove="Label\Label.js" />
+    <None Remove="LinearLayout\LinearLayout.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Button\Button.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\Input.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Label\Label.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinearLayout\LinearLayout.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ViewCreator.React\ViewCreator.React.csproj" />
+  </ItemGroup>
+
+</Project>

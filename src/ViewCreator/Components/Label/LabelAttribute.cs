@@ -7,13 +7,14 @@
     {
         public string For
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.ForKey); }
-            set { SetFeature(HtmlFeaturesFactory.For(value)); }
+            get { return GetFeature<String>(HtmlFeatures.ForKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ForKey, value)); }
         }
 
-        public LabelAttribute()
+        public string ElementContent
         {
-
+            get { return GetFeature<String>(HtmlFeatures.ElementContentType); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementContentType, value)); }
         }
     }
 }

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ViewCreator.React.UI\ViewCreator.React.UI.csproj" />
     <ProjectReference Include="..\ViewCreator.React\ViewCreator.React.csproj" />
     <ProjectReference Include="..\ViewCreator\ViewCreator.csproj" />
   </ItemGroup>

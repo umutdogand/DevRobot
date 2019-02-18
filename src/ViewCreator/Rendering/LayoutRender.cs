@@ -13,7 +13,7 @@
 
         public IViewBuilder ViewBuilder { get; private set; }
 
-        public StringBuilder Render(IEnumerable<ProperyRenderingObject> renderingObjects, IViewBuilder viewBuilder)
+        public StringBuilder Render(IEnumerable<ComponentRenderingObject> renderingObjects, IViewBuilder viewBuilder)
         {
             this.ViewBuilder = viewBuilder;
 
@@ -35,9 +35,9 @@
             return content;
         }
 
-        public StringBuilder Render(ProperyRenderingObject renderingObject, IViewBuilder viewBuilder)
+        public StringBuilder Render(ComponentRenderingObject renderingObject, IViewBuilder viewBuilder)
         {
-            return Render(new List<ProperyRenderingObject>() { renderingObject }, viewBuilder);
+            return Render(new List<ComponentRenderingObject>() { renderingObject }, viewBuilder);
         }
 
         public virtual void RenderBegin(LayoutRenderArgs e)

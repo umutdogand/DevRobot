@@ -1,26 +1,22 @@
 ﻿namespace ViewCreator.Extensions
 {
     using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.DependencyInjection;
-    using System;
-    using System.ServiceModel.Channels;
-    using System.Threading.Tasks;
-    using ViewCreator.Components;
-    using ViewCreator.React;
+    using ViewCreator.Helper;
+    using ViewCreator.React.Rendering;
+    using ViewCreator.Rendering;
 
     public static class RenderExtensions
     {
-        public static IReactBuilder AddReact(this IServiceCollection services)
+        public static IReactViewBuilder AddReact(this IServiceCollection services)
         {
-            ReactBuilder reactBuilder = new ReactBuilder();
-
-            /*
-             * React ile ilgili render sınıflarının inject edildiği fonksiyon
-             * 
-             */
+            ReactViewBuilder reactBuilder = new ReactViewBuilder();
 
             services.AddSingleton<IViewBuilder>(reactBuilder);
+            services.AddSingleton<ViewBuilderConfig>(reactBuilder.ViewBuilderConfig);
+
+            services.AddStaticHttpContextAccessor();
+            services.AddStaticSessionScopeFactory();
 
             return reactBuilder;
         }
@@ -29,34 +25,17 @@
         {
             var serviceProvider = applicationBuilder.ApplicationServices;
 
-            ReactBuilder reactBuilder = serviceProvider.GetService<IViewBuilder>() as ReactBuilder;
+            ReactViewBuilder reactBuilder = serviceProvider.GetService<IViewBuilder>() as ReactViewBuilder;
 
-            reactBuilder.AddOrUpdateComponent<ButtonAttribute, ButtonReactRender>();
-            reactBuilder.AddOrUpdateComponent<LinearLayoutAttribute, LinearLayoutReactRender>();
-            reactBuilder.AddOrUpdateComponent<LabelAttribute, LabelReactRender>();
-            reactBuilder.AddOrUpdateComponent<InputAttribute, InputReactRender>();
+            foreach (var componentRegister in reactBuilder.ComponentRegisters)
+            {
+                componentRegister.Register(reactBuilder);
+            }
+
+            applicationBuilder.UseStaticHttpContext();
+            applicationBuilder.UseStaticSessionScopeFactory();
 
             applicationBuilder.UseMiddleware<ReactMiddleware>();
-        }
-    }
-
-    public class ReactMiddleware
-    {
-        private readonly RequestDelegate _next;
-
-        public ReactMiddleware(RequestDelegate next)
-        {
-            _next = next;
-        }
-
-        public async Task InvokeAsync(HttpContext context)
-        {
-            /*
-             *  Eğer react.js isteği gelirse component dosyasını gönder
-             * 
-             */
-
-            await _next(context);
         }
     }
 }

@@ -4,7 +4,7 @@
     using System.Text;
     using ViewCreator.Components;
 
-    public abstract class HtmlComponentRender : IRender
+    public abstract class HtmlComponentRender : IHtmlComponentRender
     {
         public event EventHandler<RenderArgs> RenderBeginEvent;
 
@@ -12,7 +12,7 @@
 
         public IViewBuilder ViewBuilder { get; private set; }
 
-        public StringBuilder Render(ProperyRenderingObject renderingObject, IViewBuilder viewBuilder)
+        public StringBuilder Render(ComponentRenderingObject renderingObject, IViewBuilder viewBuilder)
         {
             this.ViewBuilder = viewBuilder;
 
