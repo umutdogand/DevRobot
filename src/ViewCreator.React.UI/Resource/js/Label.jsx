@@ -1,10 +1,10 @@
-﻿export class Button extends React.Component {
+﻿export class Label extends BaseReactComponent {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <button></button>
+            <label></label>
         );
     }
 }

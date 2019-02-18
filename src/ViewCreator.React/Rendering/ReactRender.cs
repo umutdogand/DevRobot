@@ -42,7 +42,7 @@
                 }
                 else
                 {
-                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource(_fileName + ".jsx",
+                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource("Resource.js." + _fileName + ".jsx",
                         this.GetType().Assembly));
                 }
             }

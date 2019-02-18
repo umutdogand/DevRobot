@@ -16,20 +16,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Button\Button.css" />
-    <EmbeddedResource Include="Button\Button.jsx">
+    <EmbeddedResource Include="Resource\css\Button.css" />
+    <EmbeddedResource Include="Resource\js\Button.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Input\Input.css" />
-    <EmbeddedResource Include="Input\Input.jsx">
+    <EmbeddedResource Include="Resource\css\Input.css" />
+    <EmbeddedResource Include="Resource\js\Input.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Label\Label.css" />
-    <EmbeddedResource Include="Label\Label.jsx">
+    <EmbeddedResource Include="Resource\css\Label.css" />
+    <EmbeddedResource Include="Resource\js\Label.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="LinearLayout\LinearLayout.css" />
-    <EmbeddedResource Include="LinearLayout\LinearLayout.jsx">
+    <EmbeddedResource Include="Resource\css\LinearLayout.css" />
+    <EmbeddedResource Include="Resource\js\LinearLayout.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

@@ -1,10 +1,10 @@
-﻿class Label extends React.Component {
+﻿export class LinearLayout extends BaseReactComponent {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <input></input>
+            <div></div>
         );
     }
 }

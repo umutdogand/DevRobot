@@ -1,10 +1,10 @@
-﻿class LinearLayout extends React.Component {
+﻿export class Button extends BaseReactComponent {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div></div>
+            <button></button>
         );
     }
 }
