@@ -6,6 +6,10 @@
 
     public interface IHtmlComponent
     {
+        Type RenderType { get; set; }
+
+        string Name { get; set; }
+
         string Class { get; set; }
 
         string Style { get; set; }

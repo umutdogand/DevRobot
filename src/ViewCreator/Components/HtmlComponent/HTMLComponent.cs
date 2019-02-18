@@ -6,16 +6,26 @@
     {
         public HtmlFeatureCollection Features { get; set; }
 
+        public Type RenderType { get; set; }
+
+        public string Place { get; set; }
+
+        public string Name
+        {
+            get { return GetFeature<String>(HtmlFeatures.NameKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.NameKey, value)); }
+        }
+
         public string Class
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.ClassKey); }
-            set { SetFeature(HtmlFeaturesFactory.Class(value)); }
+            get { return GetFeature<String>(HtmlFeatures.ClassKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ClassKey, value)); }
         }
 
         public string Style
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.StyleKey); }
-            set { SetFeature(HtmlFeaturesFactory.Style(value)); }
+            get { return GetFeature<String>(HtmlFeatures.StyleKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.StyleKey, value)); }
         }
 
         public string Name
@@ -26,38 +36,38 @@
 
         public string OnMouseDown
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseDownKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnMouseDown(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnMouseDownKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseDownKey, value)); }
         }
 
         public string OnMouseMove
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseMoveKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnMouseMove(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnMouseMoveKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseMoveKey, value)); }
         }
 
         public string OnmouseOut
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnmouseOutKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnmouseOut(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnmouseOutKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnmouseOutKey, value)); }
         }
 
         public string OnMouseOver
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseOverKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnMouseOver(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnMouseOverKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseOverKey, value)); }
         }
 
         public string OnMouseUp
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseUpKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnMouseUp(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnMouseUpKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseUpKey, value)); }
         }
 
         public string OnMouseWheel
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.OnMouseWheelKey); }
-            set { SetFeature(HtmlFeaturesFactory.OnMouseWheel(value)); }
+            get { return GetFeature<String>(HtmlFeatures.OnMouseWheelKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseWheelKey, value)); }
         }
 
         public HtmlComponent()

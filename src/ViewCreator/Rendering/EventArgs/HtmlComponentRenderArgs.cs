@@ -6,9 +6,9 @@
 
     public class HtmlComponentRenderArgs : RenderArgs
     {
-        public ProperyRenderingObject RenderingObject { get; set; }
+        public ComponentRenderingObject RenderingObject { get; set; }
 
-        public HtmlComponentRenderArgs(ProperyRenderingObject renderingObject)
+        public HtmlComponentRenderArgs(ComponentRenderingObject renderingObject)
         {
             this.RenderingObject = renderingObject;
         }

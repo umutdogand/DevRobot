@@ -6,9 +6,9 @@
     using System.Text;
     using ViewCreator.Components;
 
-    public class ProperyRenderingObject
+    public class ComponentRenderingObject
     {
-        public PropertyInfo PropertyInfo { get; set; }
+        //public PropertyInfo PropertyInfo { get; set; }
 
         public IHtmlComponent Component { get; set; }
     }

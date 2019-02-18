@@ -3,13 +3,13 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Http.Features;
-    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using ViewCreator.Components;
     using ViewCreator.Extensions;
+    using ViewCreator.React;
+    using ViewCreator.Rendering;
 
     public class TestApp : IApplicationBuilder
     {
@@ -41,16 +41,18 @@
         static void Main(string[] args)
         {
             IServiceCollection services = new ServiceCollection();
+
             IViewBuilder renderBuilder = services.AddReact()
-                                            .SetReactFileUrl("/react-render.js")
-                                            .SetMinify(true);
+                .AddAssembly(typeof(Program).Assembly)
+                .AddComponentRegister(new ReactComponentRegister())
+                .SetConfig(config => { config.MinifyEnabled = true; });
 
             IServiceProvider serviceProvider = services.BuildServiceProvider();
+
             TestApp testApp = new TestApp();
             testApp.ApplicationServices = serviceProvider;
             testApp.UseReact();
 
-            renderBuilder.AddAssembly(typeof(Program).Assembly);
             StringBuilder stringBuilder = renderBuilder.Render(serviceProvider);
 
             Console.WriteLine(stringBuilder.ToString());

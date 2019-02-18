@@ -1,31 +1,27 @@
-﻿namespace ViewCreator.React
+﻿namespace ViewCreator.React.Rendering
 {
     using System;
-    using System.Collections.Generic;
     using System.Text;
     using ViewCreator.Components;
     using Microsoft.Extensions.DependencyInjection;
     using ViewCreator.Rendering;
     using System.Linq;
 
-    public class ReactBuilder : RenderBuilder, IReactBuilder
+    public class ReactViewBuilder : ViewBuilder<IReactViewBuilder>, IReactViewBuilder
     {
-        public string ReactFileUrl { get; set; } = "/react-render.js";
-
-        public IReactBuilder SetReactFileUrl(string url)
+        public ReactViewBuilder()
         {
-            this.ReactFileUrl = url;
+            this.ViewBuilderConfig = new ReactViewBuilderConfig();
+        }
+
+        public IReactViewBuilder SetConfig(Action<ReactViewBuilderConfig> action)
+        {
+            action(this.ViewBuilderConfig as ReactViewBuilderConfig);
+
             return this;
         }
 
-        /*
-         * Uygulamaya özel react ayarlarının yapıldığı sınıf
-         */
-
-        /*
-         * Minimizing eklenmeli
-         */
-        public override StringBuilder Rendering(IServiceProvider provider)
+        protected override StringBuilder Rendering(IServiceProvider provider)
         {
             var viewBuilder = provider.GetService<IViewBuilder>();
 
@@ -48,11 +44,11 @@
                     {
                         foreach (var pValue in prop.Value)
                         {
-                            builder.Append(componentRender.Render(new ProperyRenderingObject()
-                            {
-                                Component = pValue,
-                                PropertyInfo = prop.Key
-                            }, viewBuilder));
+                            //builder.Append(componentRender.Render(new ComponentRenderingObject()
+                            //{
+                            //    Component = pValue,
+                            //    PropertyInfo = prop.Key
+                            //}, viewBuilder));
                         }
                     }
                 }

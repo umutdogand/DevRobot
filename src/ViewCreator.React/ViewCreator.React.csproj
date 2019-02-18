@@ -5,16 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Button\ButtonReact.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="ViewCreator.React\ButtonReactRender.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="NetPack.JsMin" Version="0.2.2" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />

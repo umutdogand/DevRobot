@@ -4,9 +4,7 @@
     }
     render() {
         return (
-            <button name={this.props.Name}
-                className={this.props.Class}
-                style={this.props.Style}></button>
+            <button></button>
         );
     }
 }

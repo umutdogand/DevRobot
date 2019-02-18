@@ -6,9 +6,9 @@
 
     public class LayoutRenderArgs : RenderArgs
     {
-        public IEnumerable<ProperyRenderingObject> RenderingObjects { get; set; }
+        public IEnumerable<ComponentRenderingObject> RenderingObjects { get; set; }
 
-        public LayoutRenderArgs(IEnumerable<ProperyRenderingObject> renderingObjects)
+        public LayoutRenderArgs(IEnumerable<ComponentRenderingObject> renderingObjects)
         {
             this.RenderingObjects = renderingObjects;
         }

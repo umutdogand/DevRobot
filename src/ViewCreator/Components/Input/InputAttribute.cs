@@ -2,130 +2,145 @@
 {
     using System;
 
-    [AttributeUsage(AttributeTargets.Property , AllowMultiple = true, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
     public class InputAttribute : HtmlComponent, IInput
     {
-        public InputAttribute() { }
-
         public string Accept
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.AcceptKey); }
-            set { SetFeature(HtmlFeaturesFactory.Accept(value)); }
+            get { return GetFeature<String>(HtmlFeatures.AcceptKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.AcceptKey, value)); }
         }
+
         public string Alt
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.AltKey); }
-            set { SetFeature(HtmlFeaturesFactory.Alt(value)); }
+            get { return GetFeature<String>(HtmlFeatures.AltKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.AltKey, value)); }
         }
+
         public string Autocomplete
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.AutocompleteKey); }
-            set { SetFeature(HtmlFeaturesFactory.Autocomplete(value)); }
+            get { return GetFeature<String>(HtmlFeatures.AutocompleteKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.AutocompleteKey, value)); }
         }
+
         public string Autofocus
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.AutofocusKey); }
-            set { SetFeature(HtmlFeaturesFactory.Autofocus(value)); }
+            get { return GetFeature<String>(HtmlFeatures.AutofocusKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.AutofocusKey, value)); }
         }
+
         public string Checked
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.CheckedKey); }
-            set { SetFeature(HtmlFeaturesFactory.Checked(value)); }
+            get { return GetFeature<String>(HtmlFeatures.CheckedKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.CheckedKey, value)); }
         }
+
         public string Dirname
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.DirnameKey); }
-            set { SetFeature(HtmlFeaturesFactory.Dirname(value)); }
+            get { return GetFeature<String>(HtmlFeatures.DirnameKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.DirnameKey, value)); }
         }
+
         public string Disabled
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.DisabledKey); }
-            set { SetFeature(HtmlFeaturesFactory.Disabled(value)); }
+            get { return GetFeature<String>(HtmlFeatures.DisabledKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.DisabledKey, value)); }
         }
+
         public string Form
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.FormKey); }
-            set { SetFeature(HtmlFeaturesFactory.Form(value)); }
+            get { return GetFeature<String>(HtmlFeatures.FormKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormKey, value)); }
         }
+
         public string FormAction
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.FormActionKey); }
-            set { SetFeature(HtmlFeaturesFactory.FormAction(value)); }
+            get { return GetFeature<String>(HtmlFeatures.FormActionKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormActionKey, value)); }
         }
+
         public string Height
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.HeightKey); }
-            set { SetFeature(HtmlFeaturesFactory.Height(value)); }
+            get { return GetFeature<String>(HtmlFeatures.HeightKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.HeightKey, value)); }
         }
+
         public string List
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.ListKey); }
-            set { SetFeature(HtmlFeaturesFactory.List(value)); }
+            get { return GetFeature<String>(HtmlFeatures.ListKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ListKey, value)); }
         }
+
         public string Max
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.MaxKey); }
-            set { SetFeature(HtmlFeaturesFactory.Max(value)); }
+            get { return GetFeature<String>(HtmlFeatures.MaxKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.MaxKey, value)); }
         }
+
         public string Maxlength
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.MaxlengthKey); }
-            set { SetFeature(HtmlFeaturesFactory.Maxlength(value)); }
+            get { return GetFeature<String>(HtmlFeatures.MaxlengthKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.MaxlengthKey, value)); }
         }
+
         public string Min
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.MinKey); }
-            set { SetFeature(HtmlFeaturesFactory.Min(value)); }
+            get { return GetFeature<String>(HtmlFeatures.MinKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.MinKey, value)); }
         }
+
         public string Multiple
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.MultipleKey); }
-            set { SetFeature(HtmlFeaturesFactory.Multiple(value)); }
+            get { return GetFeature<String>(HtmlFeatures.MultipleKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.MultipleKey, value)); }
         }
-        public string Name
-        {
-            get { return GetFeature<String>(HtmlFeaturesFactory.NameKey); }
-            set { SetFeature(HtmlFeaturesFactory.Name(value)); }
-        }
+
         public string Pattern
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.PatternKey); }
-            set { SetFeature(HtmlFeaturesFactory.Pattern(value)); }
+            get { return GetFeature<String>(HtmlFeatures.PatternKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.PatternKey, value)); }
         }
+
         public string Placeholder
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.PlaceholderKey); }
-            set { SetFeature(HtmlFeaturesFactory.Placeholder(value)); }
+            get { return GetFeature<String>(HtmlFeatures.PlaceholderKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.PlaceholderKey, value)); }
         }
+
         public string Readonly
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.ReadonlyKey); }
-            set { SetFeature(HtmlFeaturesFactory.Readonly(value)); }
+            get { return GetFeature<String>(HtmlFeatures.ReadonlyKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ReadonlyKey, value)); }
         }
+
         public string Required
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.RequiredKey); }
-            set { SetFeature(HtmlFeaturesFactory.Required(value)); }
+            get { return GetFeature<String>(HtmlFeatures.RequiredKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.RequiredKey, value)); }
         }
+
         public string Size
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.SizeKey); }
-            set { SetFeature(HtmlFeaturesFactory.Size(value)); }
+            get { return GetFeature<String>(HtmlFeatures.SizeKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.SizeKey, value)); }
         }
+
         public string Src
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.SrcKey); }
-            set { SetFeature(HtmlFeaturesFactory.Src(value)); }
+            get { return GetFeature<String>(HtmlFeatures.SrcKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.SrcKey, value)); }
         }
+
         public string Width
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.WidthKey); }
-            set { SetFeature(HtmlFeaturesFactory.Width(value)); }
+            get { return GetFeature<String>(HtmlFeatures.WidthKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.WidthKey, value)); }
         }
+
         public string Type
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.TypeKey); }
-            set { SetFeature(HtmlFeaturesFactory.Type(value)); }
+            get { return GetFeature<String>(HtmlFeatures.TypeKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.TypeKey, value)); }
         }
     }
 }

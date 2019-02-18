@@ -7,43 +7,44 @@
     {
         public string Value
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.ValueKey); }
-            set { SetFeature(HtmlFeaturesFactory.Value(value)); }
+            get { return GetFeature<String>(HtmlFeatures.ValueKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ValueKey, value)); }
         }
 
         public string Type
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.TypeKey); }
-            set { SetFeature(HtmlFeaturesFactory.Type(value)); }
+            get { return GetFeature<String>(HtmlFeatures.TypeKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.TypeKey, value)); }
         }
 
         public string Autofocus
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.AutofocusKey); }
-            set { SetFeature(HtmlFeaturesFactory.Autofocus(value)); }
+            get { return GetFeature<String>(HtmlFeatures.AutofocusKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.AutofocusKey, value)); }
         }
 
         public string Disabled
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.DisabledKey); }
-            set { SetFeature(HtmlFeaturesFactory.Disabled(value)); }
+            get { return GetFeature<String>(HtmlFeatures.DisabledKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.DisabledKey, value)); }
         }
 
         public string Form
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.FormKey); }
-            set { SetFeature(HtmlFeaturesFactory.Form(value)); }
+            get { return GetFeature<String>(HtmlFeatures.FormKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormKey, value)); }
         }
 
         public string FormAction
         {
-            get { return GetFeature<String>(HtmlFeaturesFactory.FormActionKey); }
-            set { SetFeature(HtmlFeaturesFactory.FormAction(value)); }
+            get { return GetFeature<String>(HtmlFeatures.FormActionKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormActionKey, value)); }
         }
 
-        public ButtonAttribute()
+        public string ElementContent
         {
-
+            get { return GetFeature<String>(HtmlFeatures.ElementContentType); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementContentType, value)); }
         }
     }
 }
