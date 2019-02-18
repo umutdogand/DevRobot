@@ -16,7 +16,7 @@
 
     public interface IViewBuilder<T> : IViewBuilder where T : IViewBuilder
     {
-        T AddOrUpdateComponent<T1, T2>() where T1 : IComponent where T2 : IRender;
+        T AddOrUpdateComponent<T1, T2>() where T1 : FeatureBase where T2 : IRender;
 
         T AddAssembly(Assembly assembly);
 

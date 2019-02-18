@@ -2,7 +2,7 @@
 {
     using ViewCreator.React.Rendering;
 
-    public class LinearLayoutReactRender : ReactLayoutRender
+    public class LinearLayoutReactRender : ReactRender
     {
         public LinearLayoutReactRender() : base("LinearLayout") { }
     }

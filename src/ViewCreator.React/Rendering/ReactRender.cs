@@ -38,11 +38,11 @@
                 if (File.Exists(path))
                 {
                     // Eğer proje içerisinde dosya ezilmek istenirse klasor yolunda dosyayı arar
-                    return ReadFromFile(Path.Combine(config.ReactFolderPath, _fileName));
+                    return ReadFromFile(Path.Combine(config.ReactFolderPath, _fileName + ".jsx"));
                 }
                 else
                 {
-                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource(_fileName,
+                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource(_fileName + ".jsx",
                         this.GetType().Assembly));
                 }
             }

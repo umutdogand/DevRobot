@@ -9,15 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="FileGenerator\footer.js" />
-    <None Remove="FileGenerator\header.js" />
-    <None Remove="FileGenerator\layout.js" />
+    <None Remove="FileGenerator\footer.jsx" />
+    <None Remove="FileGenerator\header.jsx" />
+    <None Remove="FileGenerator\layout.jsx" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="FileGenerator\footer.js" />
-    <EmbeddedResource Include="FileGenerator\header.js" />
-    <EmbeddedResource Include="FileGenerator\layout.js" />
+    <EmbeddedResource Include="FileGenerator\footer.jsx" />
+    <EmbeddedResource Include="FileGenerator\header.jsx" />
+    <EmbeddedResource Include="FileGenerator\layout.jsx" />
   </ItemGroup>
 
   <ItemGroup>

@@ -34,14 +34,14 @@ namespace ViewCreator.Components
             RegisteredLayouts = new List<Type>();
             ComponentRegisters = new List<IComponentRegister>();
         }
-
+        
         public virtual T AddAssembly(Assembly assembly)
         {
             var registerTypes = assembly.GetTypes()
                  .Where(i => i.GetCustomAttributes().Any(a => a is ILayout));
             registerTypes = registerTypes.Except(RegisteredLayouts);
             RegisteredLayouts.AddRange(registerTypes);
-            return (T)Convert.ChangeType(this, typeof(T));
+            return (T)(object)this;
         }
 
         public virtual T AddType(Type type)
@@ -49,21 +49,21 @@ namespace ViewCreator.Components
             var registerTypes = new List<Type>() { type }.AsEnumerable();
             registerTypes = registerTypes.Except(RegisteredLayouts);
             RegisteredLayouts.AddRange(registerTypes);
-            return (T)Convert.ChangeType(this, typeof(T));
+            return (T)(object)this;
         }
 
         public virtual T AddOrUpdateComponent<T1, T2>()
-            where T1 : IComponent
+            where T1 : FeatureBase
             where T2 : IRender
         {
             RegisteredComponents.AddOrUpdate(typeof(T1), typeof(T2), (x, y) => y);
-            return (T)Convert.ChangeType(this, typeof(T));
+            return (T)(object)this;
         }
 
         public virtual T SetConfig(Action<ViewBuilderConfig> action)
         {
             action(ViewBuilderConfig);
-            return (T)Convert.ChangeType(this, typeof(T));
+            return (T)(object)this;
         }
 
         public T AddComponentRegister(IComponentRegister componentRegister)
@@ -73,7 +73,7 @@ namespace ViewCreator.Components
                 ComponentRegisters.Add(componentRegister);
             }
 
-            return (T)Convert.ChangeType(this, typeof(T));
+            return (T)(object)this;
         }
 
         public IRender FindRender(IComponent component)

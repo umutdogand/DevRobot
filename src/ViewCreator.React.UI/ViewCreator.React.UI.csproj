@@ -7,9 +7,12 @@
   <ItemGroup>
     <None Remove="Button\Button.css" />
     <None Remove="Button\Button.jsx" />
-    <None Remove="Input\Input.js" />
-    <None Remove="Label\Label.js" />
-    <None Remove="LinearLayout\LinearLayout.js" />
+    <None Remove="Input\Input.css" />
+    <None Remove="Input\Input.jsx" />
+    <None Remove="Label\Label.css" />
+    <None Remove="Label\Label.jsx" />
+    <None Remove="LinearLayout\LinearLayout.css" />
+    <None Remove="LinearLayout\LinearLayout.jsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,13 +20,16 @@
     <EmbeddedResource Include="Button\Button.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Input\Input.js">
+    <EmbeddedResource Include="Input\Input.css" />
+    <EmbeddedResource Include="Input\Input.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Label\Label.js">
+    <EmbeddedResource Include="Label\Label.css" />
+    <EmbeddedResource Include="Label\Label.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="LinearLayout\LinearLayout.js">
+    <EmbeddedResource Include="LinearLayout\LinearLayout.css" />
+    <EmbeddedResource Include="LinearLayout\LinearLayout.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

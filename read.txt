@@ -7,8 +7,8 @@ Simdi
 * Middleware içi dolacak
 * Model objesi render edilmesi
 
-
-
+* Css dosyasý generator
+* injection ile dosya bulucu yap. COmponentrender içerisinde dosya bulucu ile js ve css dosyasý bul
 * js file dosyalari web projesine kopyalanacak eger ayarlandiysa, yoksa tek dosyada tanimlanacak
 * Linear layout
 * Base React.Component içi doldurulacak

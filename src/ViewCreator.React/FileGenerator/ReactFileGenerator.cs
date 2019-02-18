@@ -30,7 +30,7 @@
 
         private void WriteHeader(StringBuilder stringBuilder, IViewBuilder viewBuilder, IEnumerable<Type> components, IEnumerable<Type> layouts)
         {
-            string header = EmbededResourceHelper.GetEmbeddedResource("header",
+            string header = EmbededResourceHelper.GetEmbeddedResource("header.jsx",
                 typeof(ReactFileGenerator).Assembly);
             stringBuilder.AppendLine(header);
         }
@@ -52,7 +52,7 @@
 
         public void RenderLayout(StringBuilder stringBuilder, IViewBuilder viewBuilder, IEnumerable<Type> layouts)
         {
-            string layout = EmbededResourceHelper.GetEmbeddedResource("layout",
+            string layout = EmbededResourceHelper.GetEmbeddedResource("layout.jsx",
                 typeof(ReactFileGenerator).Assembly);
 
             layouts = CheckLayouts(layouts);
@@ -90,7 +90,7 @@
 
         private void WriteFooter(StringBuilder stringBuilder, IViewBuilder viewBuilder, IEnumerable<Type> components, IEnumerable<Type> layouts)
         {
-            string header = EmbededResourceHelper.GetEmbeddedResource("footer",
+            string header = EmbededResourceHelper.GetEmbeddedResource("footer.jsx",
                 typeof(ReactFileGenerator).Assembly);
             stringBuilder.AppendLine(header);
         }
