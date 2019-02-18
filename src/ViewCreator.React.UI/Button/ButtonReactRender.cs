@@ -2,7 +2,7 @@
 {
     using ViewCreator.React.Rendering;
 
-    public class ButtonReactRender : ReactHtmlComponentRender
+    public class ButtonReactRender : ReactRender
     {
         public ButtonReactRender() : base("Button") { }
     }

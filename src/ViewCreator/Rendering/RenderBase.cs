@@ -4,7 +4,7 @@
     using System.Text;
     using ViewCreator.Components;
 
-    public abstract class HtmlComponentRender : IHtmlComponentRender
+    public abstract class RenderBase : IRender
     {
         public event EventHandler<RenderArgs> RenderBeginEvent;
 
@@ -18,7 +18,7 @@
 
             StringBuilder content = null;
 
-            HtmlComponentRenderArgs args = new HtmlComponentRenderArgs(renderingObject);
+            ComponentRenderArgs args = new ComponentRenderArgs(renderingObject);
 
             for (int i = 0; !args.IsPrevent && i < 3; i++)
             {
@@ -34,7 +34,7 @@
             return content;
         }
 
-        public virtual void RenderBegin(HtmlComponentRenderArgs e)
+        public virtual void RenderBegin(ComponentRenderArgs e)
         {
             if (RenderBeginEvent != null)
             {
@@ -42,9 +42,9 @@
             }
         }
 
-        public abstract StringBuilder Rendering(HtmlComponentRenderArgs e);
+        public abstract StringBuilder Rendering(ComponentRenderArgs e);
 
-        public virtual void RenderEnd(HtmlComponentRenderArgs e)
+        public virtual void RenderEnd(ComponentRenderArgs e)
         {
             if (RenderEndEvent != null)
             {

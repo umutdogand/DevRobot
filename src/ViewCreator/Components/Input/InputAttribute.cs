@@ -3,7 +3,7 @@
     using System;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
-    public class InputAttribute : HtmlComponent, IInput
+    public class InputAttribute : Component, IInput
     {
         public string Accept
         {

@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public interface ILabel : IComponent
+    public abstract class Layout : FeatureBase, ILayout
     {
-        string For { get; set; }
+        public string LayoutClassName { get; set ; }
     }
 }

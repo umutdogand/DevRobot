@@ -15,23 +15,23 @@ namespace ViewCreator.Components
 
     public abstract class ViewBuilder<T> : IViewBuilder<T> where T : IViewBuilder
     {
-        private ConcurrentDictionary<Type, Type> _renderTypes;
+        private ConcurrentDictionary<Type, IRender> _cacheObjects;
 
-        private ConcurrentDictionary<Type, IHtmlComponentRender> _cacheObjects;
+        protected internal virtual ConcurrentDictionary<Type, Type> RegisteredComponents { get; set; }
 
         protected internal virtual ViewBuilderConfig ViewBuilderConfig { get; set; }
 
-        protected internal virtual List<Type> RegisteredComponents { get; set; }
+        protected internal virtual List<Type> RegisteredLayouts { get; set; }
 
         protected internal virtual List<IComponentRegister> ComponentRegisters { get; set; }
 
         public ViewBuilder()
         {
-            _renderTypes = new ConcurrentDictionary<Type, Type>();
-            _cacheObjects = new ConcurrentDictionary<Type, IHtmlComponentRender>();
+            _cacheObjects = new ConcurrentDictionary<Type, IRender>();
 
+            RegisteredComponents = new ConcurrentDictionary<Type, Type>();
             ViewBuilderConfig = new ViewBuilderConfig();
-            RegisteredComponents = new List<Type>();
+            RegisteredLayouts = new List<Type>();
             ComponentRegisters = new List<IComponentRegister>();
         }
 
@@ -39,24 +39,24 @@ namespace ViewCreator.Components
         {
             var registerTypes = assembly.GetTypes()
                  .Where(i => i.GetCustomAttributes().Any(a => a is ILayout));
-            registerTypes = registerTypes.Except(RegisteredComponents);
-            RegisteredComponents.AddRange(registerTypes);
+            registerTypes = registerTypes.Except(RegisteredLayouts);
+            RegisteredLayouts.AddRange(registerTypes);
             return (T)Convert.ChangeType(this, typeof(T));
         }
 
         public virtual T AddType(Type type)
         {
             var registerTypes = new List<Type>() { type }.AsEnumerable();
-            registerTypes = registerTypes.Except(RegisteredComponents);
-            RegisteredComponents.AddRange(registerTypes);
+            registerTypes = registerTypes.Except(RegisteredLayouts);
+            RegisteredLayouts.AddRange(registerTypes);
             return (T)Convert.ChangeType(this, typeof(T));
         }
 
         public virtual T AddOrUpdateComponent<T1, T2>()
-            where T1 : IHtmlComponent
-            where T2 : IHtmlComponentRender
+            where T1 : IComponent
+            where T2 : IRender
         {
-            _renderTypes.AddOrUpdate(typeof(T1), typeof(T2), (x, y) => y);
+            RegisteredComponents.AddOrUpdate(typeof(T1), typeof(T2), (x, y) => y);
             return (T)Convert.ChangeType(this, typeof(T));
         }
 
@@ -76,26 +76,32 @@ namespace ViewCreator.Components
             return (T)Convert.ChangeType(this, typeof(T));
         }
 
-        public IHtmlComponentRender FindRender(IHtmlComponent component)
+        public IRender FindRender(IComponent component)
         {
             var type = component?.RenderType ?? component?.GetType();
+            return FindRender(type);
+        }
 
-            if (type != null && _renderTypes.ContainsKey(type) && _renderTypes[type] is Type renderType)
+        public IRender FindRender(Type componentType)
+        {
+            var type = componentType;
+
+            if (type != null && RegisteredComponents.ContainsKey(type) && RegisteredComponents[type] is Type renderType)
             {
                 if (_cacheObjects.ContainsKey(type))
                 {
                     return _cacheObjects[type];
                 }
 
-                return _cacheObjects.GetOrAdd(type, Activator.CreateInstance(renderType) as IHtmlComponentRender);
+                return _cacheObjects.GetOrAdd(type, Activator.CreateInstance(renderType) as IRender);
             }
 
             return null;
         }
 
-        public StringBuilder Render(IServiceProvider provider)
+        public StringBuilder GenerateReactBuilderFile(IServiceProvider provider)
         {
-            StringBuilder stringBuilder = Rendering(provider);
+            StringBuilder stringBuilder = GeneratingReactBuilderFile(provider);
 
             if (ViewBuilderConfig.MinifyEnabled)
             {
@@ -109,10 +115,14 @@ namespace ViewCreator.Components
                     // TODO: minimize işlemi yapılacak
                 }
             }
+            else
+            {
+                // TODO : Beautifier yapılacak
+            }
 
             return stringBuilder;
         }
 
-        protected abstract StringBuilder Rendering(IServiceProvider provider);
+        protected abstract StringBuilder GeneratingReactBuilderFile(IServiceProvider provider);
     }
 }

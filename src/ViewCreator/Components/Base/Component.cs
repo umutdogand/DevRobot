@@ -2,13 +2,13 @@
 {
     using System;
 
-    public abstract class HtmlComponent : Attribute, IHtmlComponent
+    public abstract class Component : FeatureBase, IComponent
     {
-        public HtmlFeatureCollection Features { get; set; }
-
-        public Type RenderType { get; set; }
-
-        public string Place { get; set; }
+        public string Place
+        {
+            get { return GetFeature<String>(HtmlFeatures.ElementPlaceKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementPlaceKey, value)); }
+        }
 
         public string Name
         {
@@ -26,12 +26,6 @@
         {
             get { return GetFeature<String>(HtmlFeatures.StyleKey); }
             set { SetFeature(HtmlFeatures.Create(HtmlFeatures.StyleKey, value)); }
-        }
-
-        public string Name
-        {
-            get { return GetFeature<String>(HtmlFeaturesFactory.NameKey); }
-            set { SetFeature(HtmlFeaturesFactory.Name(value)); }
         }
 
         public string OnMouseDown
@@ -68,26 +62,6 @@
         {
             get { return GetFeature<String>(HtmlFeatures.OnMouseWheelKey); }
             set { SetFeature(HtmlFeatures.Create(HtmlFeatures.OnMouseWheelKey, value)); }
-        }
-
-        public HtmlComponent()
-        {
-            Features = new HtmlFeatureCollection();
-        }
-
-        public void SetFeature(IHtmlFeature feature)
-        {
-            Features.Add(feature);
-        }
-
-        public object GetFeature(string name)
-        {
-            return Features.GetValue(name);
-        }
-
-        public T GetFeature<T>(string name)
-        {
-            return (T)GetFeature(name);
         }
     }
 }

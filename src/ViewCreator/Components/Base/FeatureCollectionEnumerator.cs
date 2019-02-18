@@ -5,19 +5,19 @@
     using System.Collections.Concurrent;
     using System.Collections.Generic;
 
-    public class HtmlFeatureCollectionEnumerator : IEnumerator<IHtmlFeature>
+    public class FeatureCollectionEnumerator : IEnumerator<IFeature>
     {
-        private ConcurrentDictionary<String, IHtmlFeature> _collection = null;
-        private IEnumerator<KeyValuePair<String, IHtmlFeature>> _enumerator = null;
+        private ConcurrentDictionary<String, IFeature> _collection = null;
+        private IEnumerator<KeyValuePair<String, IFeature>> _enumerator = null;
 
-        internal HtmlFeatureCollectionEnumerator(ConcurrentDictionary<String, IHtmlFeature> collection)
+        internal FeatureCollectionEnumerator(ConcurrentDictionary<String, IFeature> collection)
         {
             this._collection = collection;
             this._enumerator = collection.GetEnumerator();
             _collection.GetEnumerator();
         }
 
-        public IHtmlFeature Current => _enumerator.Current.Value;
+        public IFeature Current => _enumerator.Current.Value;
 
         object IEnumerator.Current => _enumerator.Current.Value;
 

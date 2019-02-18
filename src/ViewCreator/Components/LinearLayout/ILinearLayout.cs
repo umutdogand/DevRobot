@@ -4,10 +4,7 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public interface IHtmlFeature
+    public interface ILinearLayout : ILayout
     {
-        string Name { get; }
-
-        object Value { get; }
     }
 }

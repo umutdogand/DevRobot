@@ -1,10 +1,10 @@
-﻿class Button extends React.Component {
+﻿export class ___LAYOUT_NAME___ extends BaseReactComponent {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <button></button>
+            <div></div>
         );
     }
 }

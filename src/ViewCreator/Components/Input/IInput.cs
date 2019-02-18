@@ -1,6 +1,6 @@
 ﻿namespace ViewCreator.Components
 {
-    public interface IInput : IHtmlComponent
+    public interface IInput : IComponent
     {
         string Accept { get; set; }
 

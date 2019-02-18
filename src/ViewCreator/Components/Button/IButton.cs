@@ -1,6 +1,6 @@
 ﻿namespace ViewCreator.Components
 {
-    public interface IButton : IHtmlComponent
+    public interface IButton : IComponent
     {
         string Value { get; set; }
 

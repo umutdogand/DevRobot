@@ -4,7 +4,10 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public interface ILayout : IHtmlComponent
+    public interface IFeature
     {
+        string Name { get; }
+
+        object Value { get; }
     }
 }

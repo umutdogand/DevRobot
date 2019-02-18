@@ -5,14 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Button\Button.js" />
+    <None Remove="Button\Button.css" />
+    <None Remove="Button\Button.jsx" />
     <None Remove="Input\Input.js" />
     <None Remove="Label\Label.js" />
     <None Remove="LinearLayout\LinearLayout.js" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Button\Button.js">
+    <EmbeddedResource Include="Button\Button.css" />
+    <EmbeddedResource Include="Button\Button.jsx">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Input\Input.js">

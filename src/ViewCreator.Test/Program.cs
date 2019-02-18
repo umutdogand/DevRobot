@@ -53,7 +53,7 @@
             testApp.ApplicationServices = serviceProvider;
             testApp.UseReact();
 
-            StringBuilder stringBuilder = renderBuilder.Render(serviceProvider);
+            StringBuilder stringBuilder = renderBuilder.GenerateReactBuilderFile(serviceProvider);
 
             Console.WriteLine(stringBuilder.ToString());
         }

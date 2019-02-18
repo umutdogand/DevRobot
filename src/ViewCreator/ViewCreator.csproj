@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Rendering\EventArgs\LayoutRenderArgs.cs" />
+    <Compile Remove="Rendering\ILayoutRender.cs" />
+    <Compile Remove="Rendering\LayoutRender.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Components\ButtonRender.js" />
     <None Remove="Components\HTMLComponent.js" />
   </ItemGroup>
@@ -12,6 +18,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
   </ItemGroup>
 

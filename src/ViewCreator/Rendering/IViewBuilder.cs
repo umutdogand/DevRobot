@@ -7,14 +7,16 @@
 
     public interface IViewBuilder
     {
-        IHtmlComponentRender FindRender(IHtmlComponent component);
+        IRender FindRender(IComponent component);
 
-        StringBuilder Render(IServiceProvider provider);
+        IRender FindRender(Type componentType);
+
+        StringBuilder GenerateReactBuilderFile(IServiceProvider provider);
     }
 
-    public interface IViewBuilder<T> : IViewBuilder where T : IViewBuilder 
+    public interface IViewBuilder<T> : IViewBuilder where T : IViewBuilder
     {
-        T AddOrUpdateComponent<T1, T2>() where T1 : IHtmlComponent where T2 : IHtmlComponentRender;
+        T AddOrUpdateComponent<T1, T2>() where T1 : IComponent where T2 : IRender;
 
         T AddAssembly(Assembly assembly);
 

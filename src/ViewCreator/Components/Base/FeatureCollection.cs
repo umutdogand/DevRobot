@@ -5,12 +5,12 @@
     using System.Collections.Concurrent;
     using System.Collections.Generic;
 
-    public class HtmlFeatureCollection : ICollection<IHtmlFeature>
+    public class FeatureCollection : ICollection<IFeature>
     {
         #region Fields
 
-        private readonly ConcurrentDictionary<String, IHtmlFeature> _hashSet =
-            new ConcurrentDictionary<string, IHtmlFeature>();
+        private readonly ConcurrentDictionary<String, IFeature> _hashSet =
+            new ConcurrentDictionary<string, IFeature>();
 
         #endregion
 
@@ -24,14 +24,14 @@
 
         #region Methods
 
-        public void Add(IHtmlFeature item)
+        public void Add(IFeature item)
         {
             _hashSet.AddOrUpdate(item.Name, item, (i, j) => { return j; });
         }
 
         public object GetValue(string name)
         {
-            if (_hashSet.TryGetValue(name, out IHtmlFeature attribute))
+            if (_hashSet.TryGetValue(name, out IFeature attribute))
             {
                 return attribute.Value;
             }
@@ -44,24 +44,24 @@
             _hashSet.Clear();
         }
 
-        public bool Contains(IHtmlFeature item)
+        public bool Contains(IFeature item)
         {
             return _hashSet.ContainsKey(item.Name);
         }
 
-        public void CopyTo(IHtmlFeature[] array, int arrayIndex)
+        public void CopyTo(IFeature[] array, int arrayIndex)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerator<IHtmlFeature> GetEnumerator()
+        public IEnumerator<IFeature> GetEnumerator()
         {
-            return new HtmlFeatureCollectionEnumerator(_hashSet);
+            return new FeatureCollectionEnumerator(_hashSet);
         }
 
-        public bool Remove(IHtmlFeature item)
+        public bool Remove(IFeature item)
         {
-            return _hashSet.TryRemove(item.Name, out IHtmlFeature val);
+            return _hashSet.TryRemove(item.Name, out IFeature val);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

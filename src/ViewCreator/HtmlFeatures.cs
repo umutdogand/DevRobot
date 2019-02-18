@@ -7,7 +7,9 @@
         /// <summary>
         /// Elementin tagları arasındaki değeri tanımlar
         /// </summary>
-        public const string ElementContentType = "elementcontent";
+        public const string ElementContentTypeKey = "elementcontent";
+
+        public const string ElementPlaceKey = "elementplace";
 
         public const string NameKey = "name";
         public const string ClassKey = "class";
@@ -47,9 +49,9 @@
         public const string SrcKey = "src";
         public const string WidthKey = "width";
 
-        public static HtmlFeature Create(string key, string value)
+        public static Feature Create(string key, string value)
         {
-            return new HtmlFeature(key, value);
+            return new Feature(key, value);
         }
     }
 }

@@ -6,16 +6,16 @@
     using Microsoft.Extensions.DependencyInjection;
     using ViewCreator.Rendering;
 
-    public class ReactHtmlComponentRender : HtmlComponentRender
+    public class ReactRender : RenderBase
     {
         private readonly string _fileName = null;
 
-        public ReactHtmlComponentRender()
+        public ReactRender()
         {
             this._fileName = this.GetType().Name;
         }
 
-        public ReactHtmlComponentRender(string fileName)
+        public ReactRender(string fileName)
         {
             this._fileName = fileName;
         }
@@ -28,13 +28,23 @@
             }
         }
 
-        public override StringBuilder Rendering(HtmlComponentRenderArgs e)
+        public override StringBuilder Rendering(ComponentRenderArgs e)
         {
             using (var scope = SessionScopeFactory.Current.CreateScope())
             {
                 var config = scope.ServiceProvider.GetService<ViewBuilderConfig>() as ReactViewBuilderConfig;
+                var path = Path.Combine(config.ReactFolderPath, _fileName);
 
-                return ReadFromFile(Path.Combine(config.ReactFolderPath, _fileName));
+                if (File.Exists(path))
+                {
+                    // Eğer proje içerisinde dosya ezilmek istenirse klasor yolunda dosyayı arar
+                    return ReadFromFile(Path.Combine(config.ReactFolderPath, _fileName));
+                }
+                else
+                {
+                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource(_fileName,
+                        this.GetType().Assembly));
+                }
             }
         }
     }

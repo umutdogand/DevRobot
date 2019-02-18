@@ -3,7 +3,7 @@
     using System;
 
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
-    public class LabelAttribute : HtmlComponent, ILabel
+    public class LabelAttribute : Component, ILabel
     {
         public string For
         {
@@ -13,8 +13,8 @@
 
         public string ElementContent
         {
-            get { return GetFeature<String>(HtmlFeatures.ElementContentType); }
-            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementContentType, value)); }
+            get { return GetFeature<String>(HtmlFeatures.ElementContentTypeKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementContentTypeKey, value)); }
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     using ViewCreator.React.Rendering;
 
-    public class LabelReactRender : ReactHtmlComponentRender
+    public class LabelReactRender : ReactRender
     {
         public LabelReactRender() : base("Label") { }
     }

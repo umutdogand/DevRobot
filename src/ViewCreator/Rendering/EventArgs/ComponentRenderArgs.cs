@@ -4,11 +4,11 @@
     using System.Collections.Generic;
     using System.Text;
 
-    public class HtmlComponentRenderArgs : RenderArgs
+    public class ComponentRenderArgs : RenderArgs
     {
         public ComponentRenderingObject RenderingObject { get; set; }
 
-        public HtmlComponentRenderArgs(ComponentRenderingObject renderingObject)
+        public ComponentRenderArgs(ComponentRenderingObject renderingObject)
         {
             this.RenderingObject = renderingObject;
         }

@@ -2,7 +2,7 @@
 {
     using ViewCreator.React.Rendering;
 
-    public class InputReactRender : ReactHtmlComponentRender
+    public class InputReactRender : ReactRender
     {
         public InputReactRender() : base("Input") { }
     }

@@ -3,7 +3,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public struct HtmlFeature : IHtmlFeature
+    public struct Feature : IFeature
     {
         /*
          *  Fields 
@@ -37,7 +37,7 @@
         /// </summary>
         /// <param name="name">Html elemanın özellik adı</param>
         /// <param name="value">Html elemanın özellik değeri</param>
-        public HtmlFeature(string name, string value)
+        public Feature(string name, string value)
         {
             this._name = name;
             this._value = value;

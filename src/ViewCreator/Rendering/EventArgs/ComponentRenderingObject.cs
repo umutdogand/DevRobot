@@ -8,8 +8,6 @@
 
     public class ComponentRenderingObject
     {
-        //public PropertyInfo PropertyInfo { get; set; }
-
-        public IHtmlComponent Component { get; set; }
+        public Type ComponentType { get; set; }
     }
 }

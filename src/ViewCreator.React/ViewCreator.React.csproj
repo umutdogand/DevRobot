@@ -5,6 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Rendering\ReactLayoutRender.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="FileGenerator\footer.js" />
+    <None Remove="FileGenerator\header.js" />
+    <None Remove="FileGenerator\layout.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="FileGenerator\footer.js" />
+    <EmbeddedResource Include="FileGenerator\header.js" />
+    <EmbeddedResource Include="FileGenerator\layout.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="NetPack.JsMin" Version="0.2.2" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
