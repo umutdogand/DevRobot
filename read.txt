@@ -1,8 +1,4 @@
-OK
-* component e place ekle
-* builder pattern assembly, add class
 
-Simdi
 * React File generator
 * Middleware içi dolacak
 * Model objesi render edilmesi
@@ -10,14 +6,13 @@ Simdi
 * Css dosyasý generator
 * injection ile dosya bulucu yap. COmponentrender içerisinde dosya bulucu ile js ve css dosyasý bul
 * js file dosyalari web projesine kopyalanacak eger ayarlandiysa, yoksa tek dosyada tanimlanacak
-* Linear layout
-* Base React.Component içi doldurulacak
-* ViewBuilder minify ve beautifuler ekle
-* Button tamamlanacak
-* Label tamamlanacak. Static label yazilabilmeli.
 * Html içerisinde content degeri static olarak atanabilecek.
-* IHtmlComponent, HtmlComponent içi dolacak
-* HtmlFeatures içi dolacak
-* Class lara yorum yazilacak
+* ViewBuilder minify ve beautifuler ekle
 * Html üretimi tarafinda name degeri property adi olacak ve iç içe modeller dikkat edilecek.
 * data-* attributeleri için kolay atama yöndetimi gelistirilecek.
+
+
+Componentler
+* Button tamamlanacak.
+* Label tamamlanacak. Static label yazilabilmeli.
+* Linear layout

@@ -61,7 +61,7 @@
             {
                 if (item.GetCustomAttributes(typeof(ILayout), true).FirstOrDefault() is ILayout first)
                 {
-                    var _replacedLayout = layout.Replace("___LAYOUT_NAME___", first.LayoutClassName ?? item.Name);
+                    var _replacedLayout = layout.Replace("___LAYOUT_NAME___", first.LayoutName ?? item.Name);
                     stringBuilder.AppendLine(_replacedLayout);
                 }
             }

@@ -34,7 +34,12 @@ namespace ViewCreator.Components
             RegisteredLayouts = new List<Type>();
             ComponentRegisters = new List<IComponentRegister>();
         }
-        
+
+        /// <summary>
+        /// Assembly içerisindeki tüm layoutları kaydeder.
+        /// </summary>
+        /// <param name="assembly">Kayıt edilecek olan assembly</param>
+        /// <returns>ViewBuilder</returns>
         public virtual T AddAssembly(Assembly assembly)
         {
             var registerTypes = assembly.GetTypes()
@@ -44,6 +49,11 @@ namespace ViewCreator.Components
             return (T)(object)this;
         }
 
+        /// <summary>
+        /// Sadece tek bir tip layout'u sisteme kayıt eder.
+        /// </summary>
+        /// <param name="type">Layout tip</param>
+        /// <returns>ViewBuilder</returns>
         public virtual T AddType(Type type)
         {
             var registerTypes = new List<Type>() { type }.AsEnumerable();
@@ -99,9 +109,9 @@ namespace ViewCreator.Components
             return null;
         }
 
-        public StringBuilder GenerateReactBuilderFile(IServiceProvider provider)
+        public StringBuilder GenerateBuilderFile(IServiceProvider provider)
         {
-            StringBuilder stringBuilder = GeneratingReactBuilderFile(provider);
+            StringBuilder stringBuilder = GeneratingBuilderFile(provider);
 
             if (ViewBuilderConfig.MinifyEnabled)
             {
@@ -123,6 +133,6 @@ namespace ViewCreator.Components
             return stringBuilder;
         }
 
-        protected abstract StringBuilder GeneratingReactBuilderFile(IServiceProvider provider);
+        protected abstract StringBuilder GeneratingBuilderFile(IServiceProvider provider);
     }
 }

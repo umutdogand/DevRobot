@@ -6,6 +6,8 @@
 
     public class ReactViewBuilder : ViewBuilder<IReactViewBuilder>, IReactViewBuilder
     {
+        public ReactViewBuilderConfig ReactViewBuilderConfig => ViewBuilderConfig as ReactViewBuilderConfig;
+
         public ReactViewBuilder()
         {
             this.ViewBuilderConfig = new ReactViewBuilderConfig();
@@ -18,11 +20,12 @@
             return this;
         }
 
-        protected override StringBuilder GeneratingReactBuilderFile(IServiceProvider provider)
+        protected override StringBuilder GeneratingBuilderFile(IServiceProvider provider)
         {
             ReactFileGenerator reactFileGenerator = new ReactFileGenerator();
 
             return reactFileGenerator.Generate(RegisteredComponents.Keys, RegisteredLayouts);
         }
+
     }
 }

@@ -1,20 +1,20 @@
-﻿/*
- * Generated File
- */
+﻿///*
+// * Generated File
+// */
 
-/*
- * Header
- */
+///*
+// * Header
+// */
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+////import React from 'react';
+////import ReactDOM from 'react-dom';
 
-export class BaseReactComponent extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-}
+//export class BaseReactComponent extends React.Component {
+//    constructor(props) {
+//        super(props);
+//    }
+//}
 
-/*
- * Body
- */
+///*
+// * Body
+// */

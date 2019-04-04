@@ -1,4 +1,6 @@
-﻿export class Label extends BaseReactComponent {
+﻿//import './css/Label.css';
+
+export class Label extends React.Component {
     constructor(props) {
         super(props);
     }

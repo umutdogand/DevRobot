@@ -11,7 +11,7 @@
 
         IRender FindRender(Type componentType);
 
-        StringBuilder GenerateReactBuilderFile(IServiceProvider provider);
+        StringBuilder GenerateBuilderFile(IServiceProvider provider);
     }
 
     public interface IViewBuilder<T> : IViewBuilder where T : IViewBuilder

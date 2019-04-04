@@ -6,6 +6,9 @@
 
     public interface ILayout
     {
-        string LayoutClassName { get; set; }
+        /// <summary>
+        /// Layout için tanımlı benzersiz isim
+        /// </summary>
+        string LayoutName { get; set; }
     }
 }

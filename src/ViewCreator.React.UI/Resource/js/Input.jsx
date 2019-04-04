@@ -1,10 +1,12 @@
-﻿export class Label extends BaseReactComponent {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <input></input>
-        );
-    }
-}
+﻿//import './css/Input.css';
+
+//export class Input extends BaseReactComponent {
+//    constructor(props) {
+//        super(props);
+//    }
+//    render() {
+//        return (
+//            <input></input>
+//        );
+//    }
+//}

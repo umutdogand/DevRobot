@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
     using System;
+    using System.IO;
     using System.Threading.Tasks;
     using ViewCreator.Helper;
     using ViewCreator.React.Rendering;
@@ -32,9 +33,9 @@
                     provider.GetService<IViewBuilder>() is IReactViewBuilder reactViewBuilder)
                 {
                     var path = context.Request.Path;
-                    if (path == viewBuilderConfig.ReactFileUrl)
+                    if (path == Path.Combine("\\", viewBuilderConfig.ReactFilePath))
                     {
-                        await context.WriteResultAsync(new ObjectResult(reactViewBuilder.GenerateReactBuilderFile(provider).ToString()));
+                        await context.WriteResultAsync(new ObjectResult(reactViewBuilder.GenerateBuilderFile(provider).ToString()));
                         return;
                     }
                 }

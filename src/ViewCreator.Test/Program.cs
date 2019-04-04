@@ -37,12 +37,11 @@
 
     public class Program
     {
-
         static void Main(string[] args)
         {
             IServiceCollection services = new ServiceCollection();
 
-            IViewBuilder renderBuilder = services.AddReact()
+            IViewBuilder renderBuilder = services.AddReactViewCreator()
                 .AddAssembly(typeof(Program).Assembly)
                 .AddComponentRegister(new ReactComponentRegister())
                 .SetConfig(config => { config.MinifyEnabled = true; });
@@ -51,9 +50,9 @@
 
             TestApp testApp = new TestApp();
             testApp.ApplicationServices = serviceProvider;
-            testApp.UseReact();
+            testApp.UseReactViewCreator();
 
-            StringBuilder stringBuilder = renderBuilder.GenerateReactBuilderFile(serviceProvider);
+            StringBuilder stringBuilder = renderBuilder.GenerateBuilderFile(serviceProvider);
 
             Console.WriteLine(stringBuilder.ToString());
         }

@@ -6,6 +6,6 @@
 
     public abstract class Layout : FeatureBase, ILayout
     {
-        public string LayoutClassName { get; set ; }
+        public string LayoutName { get; set ; }
     }
 }
