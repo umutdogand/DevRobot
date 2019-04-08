@@ -1,12 +1,12 @@
 ﻿//import './css/Input.css';
 
-//export class Input extends BaseReactComponent {
-//    constructor(props) {
-//        super(props);
-//    }
-//    render() {
-//        return (
-//            <input></input>
-//        );
-//    }
-//}
+class Input extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <input></input>
+        );
+    }
+}

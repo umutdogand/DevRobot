@@ -1,4 +1,4 @@
-﻿namespace ViewCreator.Helper
+﻿namespace MvcTool
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +12,7 @@
         public static IApplicationBuilder UseStaticSessionScopeFactory(this IApplicationBuilder app)
         {
             var factory = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>();
-            SessionScopeFactory.Configure(factory);
+            Helper.SessionScopeFactory.Configure(factory);
             return app;
         }
     }

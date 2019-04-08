@@ -2,7 +2,6 @@
 {
     using System;
 
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
     public class LabelAttribute : Component, ILabel
     {
         public string For

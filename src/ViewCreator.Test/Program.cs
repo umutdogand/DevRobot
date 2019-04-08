@@ -42,7 +42,7 @@
             IServiceCollection services = new ServiceCollection();
 
             IViewBuilder renderBuilder = services.AddReactViewCreator()
-                .AddAssembly(typeof(Program).Assembly)
+                .AddLayoutModelsFromAssembly(typeof(Program).Assembly)
                 .AddComponentRegister(new ReactComponentRegister())
                 .SetConfig(config => { config.MinifyEnabled = true; });
 

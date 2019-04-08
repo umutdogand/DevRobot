@@ -5,6 +5,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using ViewCreator.React;
     using ViewCreator.Extensions;
+    using MvcTool.Helper;
 
     public class Startup
     {
@@ -12,8 +13,13 @@
         {
             services.AddMvc();
 
+            services.AddStaticSessionScopeFactory();
+            services.AddStaticHttpContextAccessor();
+
+            services.AddSession();
+
             services.AddReactViewCreator()
-                .AddAssembly(typeof(Program).Assembly)
+                .AddLayoutModelsFromAssembly(typeof(Program).Assembly)
                 .AddComponentRegister(new ReactComponentRegister())
                 .SetConfig(config => { config.MinifyEnabled = true; });
         }
@@ -28,6 +34,11 @@
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseStaticSessionScopeFactory();
+            app.UseStaticHttpContextAccessor();
+
+            app.UseSession(new SessionOptions());
 
             app.UseMvc(routes =>
             {

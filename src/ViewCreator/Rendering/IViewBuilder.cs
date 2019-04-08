@@ -18,9 +18,9 @@
     {
         T AddOrUpdateComponent<T1, T2>() where T1 : FeatureBase where T2 : IRender;
 
-        T AddAssembly(Assembly assembly);
+        T AddLayoutModelsFromAssembly(Assembly assembly);
 
-        T AddType(Type type);
+        T AddLayoutModelType(Type type);
 
         T AddComponentRegister(IComponentRegister componentRegister);
 

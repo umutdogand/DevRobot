@@ -2,14 +2,9 @@
 {
     using System;
 
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public abstract class Component : FeatureBase, IComponent
     {
-        public string Place
-        {
-            get { return GetFeature<String>(HtmlFeatures.ElementPlaceKey); }
-            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementPlaceKey, value)); }
-        }
-
         public string Name
         {
             get { return GetFeature<String>(HtmlFeatures.NameKey); }

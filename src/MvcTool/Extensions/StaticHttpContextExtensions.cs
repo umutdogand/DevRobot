@@ -1,4 +1,4 @@
-﻿namespace ViewCreator.Helper
+﻿namespace MvcTool
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Http;
@@ -11,10 +11,10 @@
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
-        public static IApplicationBuilder UseStaticHttpContext(this IApplicationBuilder app)
+        public static IApplicationBuilder UseStaticHttpContextAccessor(this IApplicationBuilder app)
         {
             var httpContextAccessor = app.ApplicationServices.GetRequiredService<IHttpContextAccessor>();
-            HttpContext.Configure(httpContextAccessor);
+            Helper.HttpContext.Configure(httpContextAccessor);
             return app;
         }
     }

@@ -8,11 +8,6 @@
     {
         Type RenderType { get; set; }
 
-        /// <summary>
-        /// Layout içerisinde alacağı konumun yeri
-        /// </summary>
-        string Place { get; set; }
-
         string Name { get; set; }
 
         string Class { get; set; }

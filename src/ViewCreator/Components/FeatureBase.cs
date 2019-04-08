@@ -1,14 +1,18 @@
 ﻿namespace ViewCreator.Components
-{ 
+{
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public abstract class FeatureBase : Attribute
     {
         public FeatureCollection Features { get; set; }
 
         public Type RenderType { get; set; }
+
+        public string Place
+        {
+            get { return GetFeature<String>(HtmlFeatures.ElementPlaceKey); }
+            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementPlaceKey, value)); }
+        }
 
         public FeatureBase()
         {

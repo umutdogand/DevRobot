@@ -1,8 +1,7 @@
 ﻿namespace ViewCreator.Components
 {
     using System;
-
-    [AttributeUsage(AttributeTargets.Property, AllowMultiple = true, Inherited = true)]
+    
     public class InputAttribute : Component, IInput
     {
         public string Accept

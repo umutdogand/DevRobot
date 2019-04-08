@@ -35,6 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ViewCreator.Mvc\ViewCreator.Mvc.csproj" />
+    <ProjectReference Include="..\ViewCreator.UI\ViewCreator.UI.csproj" />
     <ProjectReference Include="..\ViewCreator\ViewCreator.csproj" />
   </ItemGroup>
 

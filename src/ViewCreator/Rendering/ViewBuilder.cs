@@ -40,7 +40,7 @@ namespace ViewCreator.Components
         /// </summary>
         /// <param name="assembly">Kayıt edilecek olan assembly</param>
         /// <returns>ViewBuilder</returns>
-        public virtual T AddAssembly(Assembly assembly)
+        public virtual T AddLayoutModelsFromAssembly(Assembly assembly)
         {
             var registerTypes = assembly.GetTypes()
                  .Where(i => i.GetCustomAttributes().Any(a => a is ILayout));
@@ -54,7 +54,7 @@ namespace ViewCreator.Components
         /// </summary>
         /// <param name="type">Layout tip</param>
         /// <returns>ViewBuilder</returns>
-        public virtual T AddType(Type type)
+        public virtual T AddLayoutModelType(Type type)
         {
             var registerTypes = new List<Type>() { type }.AsEnumerable();
             registerTypes = registerTypes.Except(RegisteredLayouts);
@@ -115,24 +115,20 @@ namespace ViewCreator.Components
 
             if (ViewBuilderConfig.MinifyEnabled)
             {
-                var stream = new MemoryStream();
-                using (var writer = new StreamWriter(stream))
-                {
-                    writer.Write(stringBuilder.ToString());
-                    writer.Flush();
-                    stream.Position = 0;
-
-                    // TODO: minimize işlemi yapılacak
-                }
+                Minify(provider, stringBuilder);
             }
             else
             {
-                // TODO : Beautifier yapılacak
+                Beautify(provider, stringBuilder);
             }
 
             return stringBuilder;
         }
 
         protected abstract StringBuilder GeneratingBuilderFile(IServiceProvider provider);
+
+        protected abstract StringBuilder Minify(IServiceProvider provider, StringBuilder stringBuilder);
+
+        protected abstract StringBuilder Beautify(IServiceProvider provider, StringBuilder stringBuilder);
     }
 }

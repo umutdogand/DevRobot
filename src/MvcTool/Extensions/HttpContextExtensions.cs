@@ -1,4 +1,4 @@
-﻿namespace ViewCreator.Helper
+﻿namespace MvcTool
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Abstractions;

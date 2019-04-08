@@ -1,4 +1,4 @@
-﻿namespace MvcTool.Extensions
+﻿namespace MvcTool
 {
     using Microsoft.AspNetCore.Http;
     using Newtonsoft.Json;

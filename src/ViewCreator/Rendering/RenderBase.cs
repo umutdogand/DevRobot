@@ -2,7 +2,6 @@
 {
     using System;
     using System.Text;
-    using ViewCreator.Components;
 
     public abstract class RenderBase : IRender
     {

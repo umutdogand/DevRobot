@@ -8,11 +8,11 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.DependencyInjection;
+    using MvcTool;
     using System;
     using System.IO;
     using System.Text;
     using System.Threading.Tasks;
-    using ViewCreator.Helper;
     using ViewCreator.React.Rendering;
     using ViewCreator.Rendering;
 
@@ -87,7 +87,7 @@
                 componentRegister.Register(reactBuilder);
             }
 
-            applicationBuilder.UseStaticHttpContext();
+            applicationBuilder.UseStaticHttpContextAccessor();
             applicationBuilder.UseStaticSessionScopeFactory();
 
             StringBuilder stringBuilder = reactBuilder.GenerateBuilderFile(serviceProvider);

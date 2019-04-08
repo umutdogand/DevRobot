@@ -1,12 +1,13 @@
 ﻿//import './css/Label.css';
 
-export class Label extends React.Component {
+class Label extends Component {
     constructor(props) {
         super(props);
     }
     render() {
+        console.log(this.props.attributes);
         return (
-            <label></label>
+            <label props={this.props.attributes}></label>
         );
     }
 }

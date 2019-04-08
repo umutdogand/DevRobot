@@ -3,10 +3,10 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
-    using System;
+    using MvcTool;
+    using MvcTool.Helper;
     using System.IO;
     using System.Threading.Tasks;
-    using ViewCreator.Helper;
     using ViewCreator.React.Rendering;
     using ViewCreator.Rendering;
 
@@ -26,6 +26,11 @@
         /// <returns></returns>
         public async Task InvokeAsync(Microsoft.AspNetCore.Http.HttpContext context)
         {
+            if (context == null)
+            {
+                throw new System.ArgumentNullException(nameof(context));
+            }
+
             using (var scope = SessionScopeFactory.Current.CreateScope())
             {
                 var provider = scope.ServiceProvider;
