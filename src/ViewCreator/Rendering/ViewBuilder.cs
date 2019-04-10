@@ -7,7 +7,6 @@ namespace ViewCreator.Components
     using System;
     using System.Collections.Concurrent;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
     using System.Reflection;
     using System.Text;
@@ -108,27 +107,5 @@ namespace ViewCreator.Components
 
             return null;
         }
-
-        public StringBuilder GenerateBuilderFile(IServiceProvider provider)
-        {
-            StringBuilder stringBuilder = GeneratingBuilderFile(provider);
-
-            if (ViewBuilderConfig.MinifyEnabled)
-            {
-                Minify(provider, stringBuilder);
-            }
-            else
-            {
-                Beautify(provider, stringBuilder);
-            }
-
-            return stringBuilder;
-        }
-
-        protected abstract StringBuilder GeneratingBuilderFile(IServiceProvider provider);
-
-        protected abstract StringBuilder Minify(IServiceProvider provider, StringBuilder stringBuilder);
-
-        protected abstract StringBuilder Beautify(IServiceProvider provider, StringBuilder stringBuilder);
     }
 }

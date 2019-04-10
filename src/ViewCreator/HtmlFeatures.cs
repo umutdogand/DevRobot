@@ -8,7 +8,6 @@
         /// Elementin tagları arasındaki değeri tanımlar
         /// </summary>
         public const string ElementContentTypeKey = "elementcontent";
-
         public const string ElementPlaceKey = "elementplace";
 
         public const string NameKey = "name";
@@ -20,6 +19,9 @@
         public const string OnMouseOverKey = "onmouseover";
         public const string OnMouseUpKey = "onmouseup";
         public const string OnMouseWheelKey = "onmousewheel";
+
+        public const string ActionKey = "action";
+        public const string MethodKey = "method";
 
         public const string TypeKey = "type";
         public const string ValueKey = "value";

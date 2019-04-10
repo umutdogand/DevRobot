@@ -4,10 +4,10 @@
     using System.Collections.Generic;
     using System.Text;
     using ViewCreator.Components;
-    using ViewCreator.Helper;
     using Microsoft.Extensions.DependencyInjection;
     using ViewCreator.Rendering;
     using System.Linq;
+    using MvcTool.Helper;
 
     public class ReactFileGenerator
     {
@@ -40,7 +40,6 @@
             foreach (var component in components)
             {
                 var render = viewBuilder.FindRender(component);
-                stringBuilder.AppendLine($@"// {component.Name}");
                 stringBuilder.AppendLine(render.Render(new ComponentRenderingObject()
                 {
                     ComponentType = component

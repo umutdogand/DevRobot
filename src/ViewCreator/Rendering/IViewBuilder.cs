@@ -10,8 +10,6 @@
         IRender FindRender(IComponent component);
 
         IRender FindRender(Type componentType);
-
-        StringBuilder GenerateBuilderFile(IServiceProvider provider);
     }
 
     public interface IViewBuilder<T> : IViewBuilder where T : IViewBuilder

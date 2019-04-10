@@ -2,7 +2,7 @@
 {
     using System;
 
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field, AllowMultiple = true, Inherited = true)]
     public abstract class Component : FeatureBase, IComponent
     {
         public string Name

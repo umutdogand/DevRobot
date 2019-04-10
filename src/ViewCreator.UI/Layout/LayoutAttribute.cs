@@ -1,11 +1,10 @@
 ﻿namespace ViewCreator.Components
 {
     using System;
+    using ViewCreator.Components;
 
-    public class LayoutAttribute : Layout, ILayout
+    public class LayoutAttribute : Layout
     {
-        public LayoutAttribute(string name) : base(name)
-        {
-        }
+        public LayoutAttribute(string layoutName) : base(layoutName) { }
     }
 }

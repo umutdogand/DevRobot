@@ -3,6 +3,7 @@
     using ViewCreator.Components;
     using ViewCreator.React.Rendering;
     using ViewCreator.Rendering;
+    using ViewCreator.UI;
 
     // TODO : Pattern uyumlu olsun
 
@@ -13,7 +14,7 @@
             var reactViewBuilder = viewBuilder as IReactViewBuilder;
 
             reactViewBuilder.AddOrUpdateComponent<ButtonAttribute, ButtonReactRender>();
-            reactViewBuilder.AddOrUpdateComponent<LinearLayoutAttribute, LinearLayoutReactRender>();
+            reactViewBuilder.AddOrUpdateComponent<LayoutAttribute, LayoutReactRender>();
             reactViewBuilder.AddOrUpdateComponent<LabelAttribute, LabelReactRender>();
             reactViewBuilder.AddOrUpdateComponent<InputAttribute, InputReactRender>();
         }

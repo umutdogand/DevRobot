@@ -1,7 +1,7 @@
-﻿namespace ViewCreator.Components
+﻿namespace ViewCreator.UI
 {
     using System;
-    
+    using ViewCreator.Components;
     public class InputAttribute : Component, IInput
     {
         public string Accept
@@ -44,18 +44,6 @@
         {
             get { return GetFeature<String>(HtmlFeatures.DisabledKey); }
             set { SetFeature(HtmlFeatures.Create(HtmlFeatures.DisabledKey, value)); }
-        }
-
-        public string Form
-        {
-            get { return GetFeature<String>(HtmlFeatures.FormKey); }
-            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormKey, value)); }
-        }
-
-        public string FormAction
-        {
-            get { return GetFeature<String>(HtmlFeatures.FormActionKey); }
-            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.FormActionKey, value)); }
         }
 
         public string Height

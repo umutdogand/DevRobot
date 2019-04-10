@@ -5,8 +5,10 @@
     using System.Text;
     using ViewCreator.Components;
 
-    public interface ILabel : IComponent
+    public interface IForm : IComponent
     {
-        string For { get; set; }
+        string Action { get; set; }
+
+        string Method { get; set; }
     }
 }

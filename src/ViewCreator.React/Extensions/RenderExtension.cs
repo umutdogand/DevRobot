@@ -13,6 +13,8 @@
     using System.IO;
     using System.Text;
     using System.Threading.Tasks;
+    using ViewCreator.Mvc;
+    using ViewCreator.React;
     using ViewCreator.React.Rendering;
     using ViewCreator.Rendering;
 
@@ -49,6 +51,7 @@
 
             services.AddSingleton<IViewBuilder>(reactBuilder);
             services.AddSingleton<ViewBuilderConfig>(reactBuilder.ViewBuilderConfig);
+            services.AddSingleton<IViewCreatorExtension, ReactViewCreatorExtension>();
 
             services.AddStaticHttpContextAccessor();
             services.AddStaticSessionScopeFactory();

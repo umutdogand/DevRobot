@@ -6,6 +6,7 @@
     using ViewCreator.React;
     using ViewCreator.Extensions;
     using MvcTool.Helper;
+    using MvcTool;
 
     public class Startup
     {

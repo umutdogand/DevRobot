@@ -5,6 +5,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using MvcTool;
     using MvcTool.Helper;
+    using System;
     using System.IO;
     using System.Threading.Tasks;
     using ViewCreator.React.Rendering;
@@ -28,19 +29,26 @@
         {
             if (context == null)
             {
-                throw new System.ArgumentNullException(nameof(context));
+                throw new ArgumentNullException(nameof(context));
             }
 
             using (var scope = SessionScopeFactory.Current.CreateScope())
             {
                 var provider = scope.ServiceProvider;
-                if (provider.GetService<ViewBuilderConfig>() is ReactViewBuilderConfig viewBuilderConfig &&
-                    provider.GetService<IViewBuilder>() is IReactViewBuilder reactViewBuilder)
+                if (provider.GetService<IViewBuilder>() is IReactViewBuilder reactViewBuilder)
                 {
-                    var path = context.Request.Path;
-                    if (path == Path.Combine("\\", viewBuilderConfig.ReactFilePath))
+                    var filePath = reactViewBuilder.ReactViewBuilderConfig.ReactFilePath?.Trim() ?? "";
+                    if (!filePath.StartsWith("/") && !filePath.StartsWith("\\"))
                     {
-                        await context.WriteResultAsync(new ObjectResult(reactViewBuilder.GenerateBuilderFile(provider).ToString()));
+                        filePath = "\\" + filePath;
+                    }
+
+                    var path = context.Request.Path;
+                    if (path == Path.Combine("\\", filePath))
+                    {
+                        await context.WriteResultAsync(
+                            new ObjectResult((reactViewBuilder.GeneratedBuilderFile ??
+                                reactViewBuilder.GenerateBuilderFile(provider, false)).ToString()));
                         return;
                     }
                 }

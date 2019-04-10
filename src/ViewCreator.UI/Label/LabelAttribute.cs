@@ -1,6 +1,7 @@
-﻿namespace ViewCreator.Components
+﻿namespace ViewCreator.UI
 {
     using System;
+    using ViewCreator.Components;
 
     public class LabelAttribute : Component, ILabel
     {

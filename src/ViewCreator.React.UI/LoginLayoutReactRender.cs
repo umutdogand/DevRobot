@@ -2,8 +2,8 @@
 {
     using ViewCreator.React.Rendering;
 
-    public class LinearLayoutReactRender : ReactRender
+    public class LoginLayoutReactRender : ReactRender
     {
-        public LinearLayoutReactRender() : base("LinearLayout") { }
+        public LoginLayoutReactRender() : base("LoginLayoutReact") { }
     }
 }

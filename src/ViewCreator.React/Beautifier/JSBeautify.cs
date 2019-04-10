@@ -6,7 +6,6 @@
     using System.Linq;
     using System.Text;
     using System.Text.RegularExpressions;
-
     public class JSBeautify
     {
         private StringBuilder output;
@@ -470,8 +469,6 @@
             output = new StringBuilder();
             modes = new Stack<string>();
 
-
-
             indent_string = "";
 
             while (opt_indent_size > 0)
@@ -481,8 +478,6 @@
             }
 
             indent_level = opt_indent_level;
-
-
 
             input = js_source_text.Replace("<script type=\"text/javascript\">", "").Replace("</script>", "");
             if (input.Length != js_source_text.Length)

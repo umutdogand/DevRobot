@@ -7,9 +7,13 @@
     {
         public string LayoutName { get; set; }
 
-        public Layout(string name)
+        public string LoadUrl { get; set; }
+
+        public string LoadHttpMethod { get; set; }
+
+        public Layout(string layoutName)
         {
-            this.LayoutName = name;
+            this.LayoutName = layoutName;
         }
     }
 }

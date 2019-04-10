@@ -1,5 +1,7 @@
-﻿namespace ViewCreator.Components
+﻿namespace ViewCreator.UI
 {
+    using ViewCreator.Components;
+
     public interface IInput : IComponent
     {
         string Accept { get; set; }
@@ -15,10 +17,6 @@
         string Dirname { get; set; }
 
         string Disabled { get; set; }
-
-        string Form { get; set; }
-
-        string FormAction { get; set; }
 
         string Height { get; set; }
 

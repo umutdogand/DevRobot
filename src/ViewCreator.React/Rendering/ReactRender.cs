@@ -1,7 +1,10 @@
 ﻿namespace ViewCreator.React.Rendering
 {
+    using System.Collections.ObjectModel;
     using System.IO;
+    using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
     using Microsoft.Extensions.DependencyInjection;
     using MvcTool.Helper;
     using ViewCreator.Rendering;
@@ -20,32 +23,42 @@
             this._fileName = fileName;
         }
 
-        public StringBuilder ReadFromFile(string fileName)
-        {
-            using (System.IO.StreamReader Reader = new StreamReader(fileName))
-            {
-                return new StringBuilder(Reader.ReadToEnd());
-            }
-        }
-
         public override StringBuilder Rendering(ComponentRenderArgs e)
         {
             using (var scope = SessionScopeFactory.Current.CreateScope())
             {
-                var config = scope.ServiceProvider.GetService<ViewBuilderConfig>() as ReactViewBuilderConfig;
-                var path = Path.Combine(config.ReactFolderPath, _fileName);
+                var reactViewBuilder = scope.ServiceProvider.GetService<IViewBuilder>() as IReactViewBuilder;
 
-                if (File.Exists(path))
+                var task = Next(reactViewBuilder, reactViewBuilder.ReactFileFounderList,
+                    _fileName, reactViewBuilder.ReactFileFounderList.Count - 1);
+
+                Task.WaitAll(task);
+
+                var streamResult = task.Result;
+
+                using (StreamReader reader = new StreamReader(streamResult))
                 {
-                    // Eğer proje içerisinde dosya ezilmek istenirse klasor yolunda dosyayı arar
-                    return ReadFromFile(Path.Combine(config.ReactFolderPath, _fileName + ".jsx"));
-                }
-                else
-                {
-                    return new StringBuilder(EmbededResourceHelper.GetEmbeddedResource("Resource.js." + _fileName + ".jsx",
-                        this.GetType().Assembly));
+                    string text = reader.ReadToEnd();
+                    return new StringBuilder(text);
                 }
             }
+        }
+
+        private Task<Stream> Next(IReactViewBuilder reactViewBuilder, 
+            ReadOnlyCollection<IReactFileFounder> fourderList,
+            string fileName, int index)
+        {
+            if (index >= 0)
+            {
+                Task<Stream>.Run(() =>
+                {
+                    return fourderList.ElementAt(index)
+                        .Find(reactViewBuilder, fileName,
+                        () => { return Next(reactViewBuilder, fourderList, fileName, index - 1); });
+                });
+            }
+
+            return null;
         }
     }
 }

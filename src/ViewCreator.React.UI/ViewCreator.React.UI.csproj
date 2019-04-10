@@ -11,8 +11,8 @@
     <None Remove="Input\Input.jsx" />
     <None Remove="Label\Label.css" />
     <None Remove="Label\Label.jsx" />
-    <None Remove="LinearLayout\LinearLayout.css" />
-    <None Remove="LinearLayout\LinearLayout.jsx" />
+    <None Remove="Layout\LinearLayout.css" />
+    <None Remove="Layout\LinearLayout.jsx" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,11 +8,7 @@
 
         public Type RenderType { get; set; }
 
-        public string Place
-        {
-            get { return GetFeature<String>(HtmlFeatures.ElementPlaceKey); }
-            set { SetFeature(HtmlFeatures.Create(HtmlFeatures.ElementPlaceKey, value)); }
-        }
+        public string Place { get; set; }
 
         public FeatureBase()
         {

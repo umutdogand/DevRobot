@@ -1,4 +1,4 @@
-﻿namespace ViewCreator.Components
+﻿namespace ViewCreator.UI
 {
     public static class ButtonType
     {
