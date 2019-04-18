@@ -1,90 +1,133 @@
-# MvcTool
-	* İçerisinde mvc için gerekli olan Helper ve Extension gibi yardımcı yapıları barındırır.
-
+ï»¿# MvcTool
+	* Ä°Ã§erisinde mvc iÃ§in gerekli olan Helper ve Extension gibi yardÄ±mcÄ± yapÄ±larÄ± barÄ±ndÄ±rÄ±r.
+	
 # View Creator
-	* İçerisinde view create için gerekli temel frameworktür.
-	* IFeature, Feature => Component içerisinde saklanacak olan özel ve tanımlı attribute ları saklamak için kullanılır.
-	* FeautureBase => Component ve Layoutlar için temel bir elemetdir. İçerisinde FeatureCollection barındırır.
-		Render edilebilir ve Place özelliği ile bir place e yerleştirilebilir bir nesnedir.
+	* Ä°Ã§erisinde view create iÃ§in gerekli temel frameworktÃ¼r.
+	* IFeature, Feature => Component iÃ§erisinde saklanacak olan Ã¶zel ve tanÄ±mlÄ± attribute larÄ± saklamak iÃ§in kullanÄ±lÄ±r.
+	* FeautureBase => Component ve Layoutlar iÃ§in temel bir elemetdir. Ä°Ã§erisinde FeatureCollection barÄ±ndÄ±rÄ±r.
+		Render edilebilir ve Place Ã¶zelliÄŸi ile bir place e yerleÅŸtirilebilir bir nesnedir.
 	* IComponent, Component => Bir html componentini ihtiva eder (Button, Label vb). FeatureBase dir.
-		Aynı zamanda bir Class veya Propery için attribute dür. Bir property veya class üzerinde birden fazla
+		AynÄ± zamanda bir Class veya Propery iÃ§in attribute dÃ¼r. Bir property veya class Ã¼zerinde birden fazla
 		component bulunabilir.
-	* ILayout, Layout => Layout amacı componentleri arayüzde bir arada tutabilmektir. Layoutlarında bir render nesnesi vardır
-		ve FeatureBase dir. Layoutlar sunuya istek atarak içerisindeki componentlerin bilgilerini güncelleyebilirler.
-		Layoutlar customize edilmediği sürece temel olarak aynı render sınıfını kullanacakmış gibi tasarlanmıştır.
-		Bu yüzden parametre olarak LayoutName alır. Bu layout name, render sırasında hangi layout kullanılacağı tespiti için oluşturulmuştur.
-		Yani her bir layout için farklı sınıf oluşturulmadanda (Ekstra özellik içermediği sürece) kullanılabilinir.
-		Çünkü temel olarak layoutlar içerisindeki componentleri kontrol ve düzenleme amacı taşır.
-	* IComponentRegister => Sistem oluşturulurken siteme kayıt edilmek istenen componentler için kullanılır.
-	* IRender, RenderBase => Render edilebilir yapılar için kullanılan render sınıf arayüzü
-	* IViewBuilder => Startup sırasında creator ayarlamalarını yapar.
-	* HtmlFeatures => Html elemanları için gerekli attribute lar.
+	* ILayout, Layout => Layout amacÄ± componentleri arayÃ¼zde bir arada tutabilmektir. LayoutlarÄ±nda bir render nesnesi vardÄ±r
+		ve FeatureBase dir. Layoutlar sunuya istek atarak iÃ§erisindeki componentlerin bilgilerini gÃ¼ncelleyebilirler.
+		Layoutlar customize edilmediÄŸi sÃ¼rece temel olarak aynÄ± render sÄ±nÄ±fÄ±nÄ± kullanacakmÄ±ÅŸ gibi tasarlanmÄ±ÅŸtÄ±r.
+		Bu yÃ¼zden parametre olarak LayoutName alÄ±r. Bu layout name, render sÄ±rasÄ±nda hangi layout kullanÄ±lacaÄŸÄ± tespiti iÃ§in oluÅŸturulmuÅŸtur.
+		Yani her bir layout iÃ§in farklÄ± sÄ±nÄ±f oluÅŸturulmadanda (Ekstra Ã¶zellik iÃ§ermediÄŸi sÃ¼rece) kullanÄ±labilinir.
+		Ã‡Ã¼nkÃ¼ temel olarak layoutlar iÃ§erisindeki componentleri kontrol ve dÃ¼zenleme amacÄ± taÅŸÄ±r.
+	* IComponentRegister => Sistem oluÅŸturulurken siteme kayÄ±t edilmek istenen componentler iÃ§in kullanÄ±lÄ±r.
+	* IRender, RenderBase => Render edilebilir yapÄ±lar iÃ§in kullanÄ±lan render sÄ±nÄ±f arayÃ¼zÃ¼
+	* IViewBuilder => Startup sÄ±rasÄ±nda creator ayarlamalarÄ±nÄ± yapar.
+	* HtmlFeatures => Html elemanlarÄ± iÃ§in gerekli attribute lar.
 
 # ViewCreator.UI
-	* İçerisinde tüm component yapıları için tanımlamaları barındırır.
+	* Ä°Ã§erisinde tÃ¼m component yapÄ±larÄ± iÃ§in tanÄ±mlamalarÄ± barÄ±ndÄ±rÄ±r.
 
 # ViewCreator.MVC
-	* ViewCreatorExtension => MVC içerisinde bir componentin yada layout un render edilip gösterilmesini sağlar.
-	* IViewCreatorExtension => Extension kullanılabilmesi için inject edilecek olan interface.
+	* ViewCreatorExtension => MVC iÃ§erisinde bir componentin yada layout un render edilip gÃ¶sterilmesini saÄŸlar.
+	* IViewCreatorExtension => Extension kullanÄ±labilmesi iÃ§in inject edilecek olan interface.
 
 # ViewCreator.React
-	* ViewCreator altyapısının react dalıdır. Gerekli implementation lar burada yapılır.
-	* UI ile ilgili implemention yoktur. Bu kütüphane sistemin react alt yapısını sağlar.
-	* Kütüphane React.AspNet ile bağımlıdır ve ChakraCore kullanır.
+	* ViewCreator altyapÄ±sÄ±nÄ±n react dalÄ±dÄ±r. Gerekli implementation lar burada yapÄ±lÄ±r.
+	* UI ile ilgili implemention yoktur. Bu kÃ¼tÃ¼phane sistemin react alt yapÄ±sÄ±nÄ± saÄŸlar.
+	* KÃ¼tÃ¼phane React.AspNet ile baÄŸÄ±mlÄ±dÄ±r ve ChakraCore kullanÄ±r.
 
-	* Beautifier => Bu kısımda üretilecek olan react dosyasının beautifier yapılmasını sağlar.
-	* Minification => Bu kısımda üretilecek olan react dosyasının minify edilmesini sağlar.
-	* ReactViewBuilder => ViewBuilder ın react için implemente edilmiş formatıdır.
-	* ReactViewBuilderConfig => React için gerekli ayar dosyasıdır.
-	* RenderExtensions => Sisteme react için gerekli dosyaları inject eder ve ayarlamaları yapıp sistemi oluşturur.
+	* Beautifier => Bu kÄ±sÄ±mda Ã¼retilecek olan react dosyasÄ±nÄ±n beautifier yapÄ±lmasÄ±nÄ± saÄŸlar.
+	* Minification => Bu kÄ±sÄ±mda Ã¼retilecek olan react dosyasÄ±nÄ±n minify edilmesini saÄŸlar.
+	* ReactViewBuilder => ViewBuilder Ä±n react iÃ§in implemente edilmiÅŸ formatÄ±dÄ±r.
+	* ReactViewBuilderConfig => React iÃ§in gerekli ayar dosyasÄ±dÄ±r.
+	* RenderExtensions => Sisteme react iÃ§in gerekli dosyalarÄ± inject eder ve ayarlamalarÄ± yapÄ±p sistemi oluÅŸturur.
 	* ReactRender =>
-	* IReactFileFounder => Resource dosyalarının bulunmasını sağlamak için kullanılan file founder. Inject edilmesi gerekir.
+	* IReactFileFounder => Resource dosyalarÄ±nÄ±n bulunmasÄ±nÄ± saÄŸlamak iÃ§in kullanÄ±lan file founder. Inject edilmesi gerekir.
 	* ReactFileGenerator =>
 	* ReactViewCreatorExtension => 
-	* ReactMiddleware => React dosyası isteği gönderildiğinde oluşturulmuş dosya döndürülür.
+	* ReactMiddleware => React dosyasÄ± isteÄŸi gÃ¶nderildiÄŸinde oluÅŸturulmuÅŸ dosya dÃ¶ndÃ¼rÃ¼lÃ¼r.
 
 # ViewCreator.UI
 	* JsxReactFileFounder
 
-# Component'lerin Sıralanma Yerleşme ve Render İlkesi
-	* Bir component eğer bir field üzerine eklenmiş ise, field daki değer arayüze elemanın contenti olarak yansır.
-	* Bir layout kullanılmak istendi. Fakat bu layout değiştirilmek isteniyor. Bu durumda projede eğer bu dosya varsa,
-		sistemde yüklü olan dosya yada class iptal edilerek bu class kullanılır.
+# Component'lerin SÄ±ralanma YerleÅŸme ve Render Ä°lkesi
+	* Bir component eÄŸer bir field Ã¼zerine eklenmiÅŸ ise, field daki deÄŸer arayÃ¼ze elemanÄ±n contenti olarak yansÄ±r.
+	* Bir layout kullanÄ±lmak istendi. Fakat bu layout deÄŸiÅŸtirilmek isteniyor. Bu durumda projede eÄŸer bu dosya varsa,
+		sistemde yÃ¼klÃ¼ olan dosya yada class iptal edilerek bu class kullanÄ±lÄ±r.
 
 # Eksiklikler
-	* Component içerisine html elemanları için temel olan propertyler tanımlanacak.
-	* Layout içerisinde http request propertyleri geliştirilmeli
-	* Design için componentlerin label
-	* Componentler için Validation ların eklenmesi
-	* Çoklu dil desteği
-	* ViewCreator.UI içerisine tüm componentler için attribute lar hazırlanması gerekmektedir.
-	* ViewCreator.React.JSBeautify ve ViewCreator.React.Minification elden geçirilecek.
-	* React render için file founder yapısı.
-	* Tasarım apply edilmesi (yüklü css temasının uygulanması)
+	* Component iÃ§erisine html elemanlarÄ± iÃ§in temel olan propertyler tanÄ±mlanacak.
+	
+	* Layout iÃ§erisinde http request propertyleri geliÅŸtirilmeli
+	* Design iÃ§in componentlerin label
+	* Componentler iÃ§in Validation larÄ±n eklenmesi
+	* Ã‡oklu dil desteÄŸi
+	* ViewCreator.UI iÃ§erisine tÃ¼m componentler iÃ§in attribute lar hazÄ±rlanmasÄ± gerekmektedir.
+	* ViewCreator.React.JSBeautify ve ViewCreator.React.Minification elden geÃ§irilecek.
+	* React render iÃ§in file founder yapÄ±sÄ±.
+	* TasarÄ±m apply edilmesi (yÃ¼klÃ¼ css temasÄ±nÄ±n uygulanmasÄ±)
 
-# Cevapsız Sorular
+# CevapsÄ±z Sorular
 	*
 
-# Olması Gerekenler
-	* Layoutların içerisinde load methodu olacak ve sunucuya istek atıp kendilerini yenileyebilecekler.
-	* Hata kontrol mekanızması. React ve sunucu arasında oluşacak hataların kontrolü için bir method izlenmeli.
-	* Componentler tamamlandıktan sonra her bir component için özelleştirme yaparak hazır eleman eklenmesi sağlanacak.
-		(Örnek; SquareButton, CircleButton vs)
-	* Tüm kodların üzerinde detaylı açıklama
-	* Bir layout, component yada proje içerisinde ki layout modelleri react tarafında rahatlıkla kullanılabilir olmalıdır.
-	+ GenerateBuilderFile fonksiyonu ürttiği dosyayı cache etmeli ve saklamalıdır. 
-	* Üretilecek tasarımlar css uyumlu olalıdır. Yani, tasarım ile değiştirilmesi için belli bir formatta class isimlendirmesi gerekmektedir.
-		Böylece tasarım paleti değiştiğinde, componentler de değişecektir.
-	* Bu proje, react kullanmaya bir sisteme eklendiğinde de arka planda react çalışsacak ve sistemi etkilemeyecek şekilde tasarlanmalıdır.
-
+# OlmasÄ± Gerekenler
+	* LayoutlarÄ±n iÃ§erisinde load methodu olacak ve sunucuya istek atÄ±p kendilerini yenileyebilecekler.
+	* Hata kontrol mekanÄ±zmasÄ±. React ve sunucu arasÄ±nda oluÅŸacak hatalarÄ±n kontrolÃ¼ iÃ§in bir method izlenmeli.
+	* Componentler tamamlandÄ±ktan sonra her bir component iÃ§in Ã¶zelleÅŸtirme yaparak hazÄ±r eleman eklenmesi saÄŸlanacak.
+		(Ã–rnek; SquareButton, CircleButton vs)
+	* TÃ¼m kodlarÄ±n Ã¼zerinde detaylÄ± aÃ§Ä±klama
+	* Bir layout, component yada proje iÃ§erisinde ki layout modelleri react tarafÄ±nda rahatlÄ±kla kullanÄ±labilir olmalÄ±dÄ±r.
+	* GenerateBuilderFile fonksiyonu Ã¼rttiÄŸi dosyayÄ± cache etmeli ve saklamalÄ±dÄ±r. 
+	* Ãœretilecek tasarÄ±mlar css uyumlu olalÄ±dÄ±r. Yani, tasarÄ±m ile deÄŸiÅŸtirilmesi iÃ§in belli bir formatta class isimlendirmesi gerekmektedir.
+		BÃ¶ylece tasarÄ±m paleti deÄŸiÅŸtiÄŸinde, componentler de deÄŸiÅŸecektir.
+	* Bu proje, react kullanmaya bir sisteme eklendiÄŸinde de arka planda react Ã§alÄ±ÅŸsacak ve sistemi etkilemeyecek ÅŸekilde tasarlanmalÄ±dÄ±r.
+	* Componentler mesela ButtonAttribute istenirse farlÄ± tsx dosyasÄ±nÄ± custom olarak kullabilmeli
 _______________________________________________________________________________________________________________
 
 # React Render
-	* Render sırasında sınıf isimlendirilmesinin önemi
+	* Render sÄ±rasÄ±nda sÄ±nÄ±f isimlendirilmesinin Ã¶nemi
+	# Componenler render edillirken Form mu Reloader mu Ã¼stde olacak, sÄ±rlama belirtilebilmeli
 
-# Bugun yapılacaklar
+# Bugun yapÄ±lacaklar
 	+ Generatefile cache edilecek
-	* Componentlerin render işlemleri tamamlanacak
-	* ReactViewCreatorExtension yapılıp inject edilecek ve denenecek.
-	* generate render dosyası oluşturulmak zorunda mı ? olmasa daha iyi olur.
+	* Componentlerin render iÅŸlemleri tamamlanacak
+	* ReactViewCreatorExtension yapÄ±lÄ±p inject edilecek ve denenecek.
+	* generate render dosyasÄ± oluÅŸturulmak zorunda mÄ± ? olmasa daha iyi olur.
 	* AddFileFounder ile JsxReactFileFounder
+	* React tarafÄ±nda button, label, input ve layout hazÄ±rlanacak. layout Ã¼retimi iÃ§n bir react kÃ¼tÃ¼phanesi olacak.
+		Layoutlar veya COmponentler oluÅŸturulmasÄ± iÃ§in feature bilgilerine ve value bilgilerine ihtiyaÃ§ duyar.
+		ReactViewCreatorExtension, render sÄ±rasÄ±nda bu bilgileri modelden analiz ederek oluÅŸturacaktÄ±r.
+		React tarafÄ±nda bu feature lar componentlere atanacaktÄ±r. 
+		EÄŸer reactt tarafÄ±nda direk olarak component yada layout kullanÄ±lmak istenirse bu attribute bilgisine ihtiyaÃ§ duyacaktÄ±r.
+		BÃ¶yle bir durum iÃ§in component yada layout sistemden istenilen yapÄ± iÃ§in metadata isteÄŸi atÄ±p sonuÃ§ alabilmelidir.
+		Bu tamamen react ile ilgilidir uygun kÃ¼tÃ¼phanede olmalÄ±dÄ±r.
+
+# React KÃ¼tÃ¼phane
+	
+	# Yetkilendirme
+	# Componentler iÃ§inde layoutu dÃ¶ndÃ¼ren fonksiyon lazÄ±m
+	# Kolay bir ÅŸeilde template gÃ¼ncellemesi iÃ§in load methodu iÃ§erecek, Buna karÅŸÄ±lÄ±k gelen bir attribute tarafÄ±dan request verileri karÅŸÄ±lanacak (c# tarafÄ±nda).
+	# Yetkiye gÃ¶re render iÅŸlemi C# tarafÄ±nda olacaktÄ±r. Fakat dynamic olarak istek atlÄ±p yetki kontrolÃ¼ yapÄ±labilmesi iÃ§in bir component gerekebilir.
+	# Login olmaya Ã§alÄ±ÅŸÄ±rken baÅŸarÄ±z oldu. Hata gÃ¶sterilecek, swal ile gÃ¶sterilebilir veya model verisi gÃ¼ncellenerek kcomponent gÃ¼ncellenir. Bu durumu gerÃ§ekleÅŸir.
+
+	# Microservice 
+		* Saga
+		* Transaction yÃ¶netimi		
+
+	# Dockerize
+
+
+	
+	# Template iÃ§ine getReloaders diye fonksiyon yap.
+	# Elemetleri kolaylÄ±kla bulabilmeliyiz. Templateler ReactStartupApp Ã¼zerinden keyler ile bulunabilecek. ReactStartupApp adÄ±nÄ± kÄ±salt. 
+		Templatelerden find() diyerek FeatureBase nesnesi bulunabilecek. PropertyAdÄ±, key, type ile ajax query s gibi bulunabilecek.
+
+
+	# Log mekanizmasÄ± saÄŸlanacak, LoggerFactory hazÄ±rla, interface kullanÄ±larak loger nesnesi oluÅŸturup redux iÃ§erisine atÄ±cak. LogRocket kullan.
+	# Multilingual iÅŸi c# tarafÄ±nda olacaktÄ±r fakat react tarafÄ±nda istek ile kontrol mekanizmasÄ± olacaktÄ±r.
+		Bu yapÄ± interface deÄŸiÅŸtirilebilir olacaktÄ±r DI ya uygun olarak
+	# Hata yÃ¶netimi => ExceptionHandler testiyle beraber yÃ¶net. Mesela bir hata olduÄŸunda swal mesajÄ± ile gÃ¶sterilebilir. Redux iÃ§erisindeki exception handling i yapÄ±ya dahil et.
+		https://reactjs.org/docs/error-boundaries.html
+	* Module ÅŸeklinde hazÄ±rla. React npm ile Ã§alÄ±ÅŸtÄ±rÄ±labilecek bir module olacak.
+	# Modelde bir dizi olursa nasÄ±l render edilecek her bir eleman iÃ§in belirli bir component yÃ¼klenmeli
+
+
+
+
+	# Projelerin nuget paketi haline getirilmesi

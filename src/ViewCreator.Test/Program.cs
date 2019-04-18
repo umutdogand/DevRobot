@@ -9,6 +9,7 @@
     using System.Text;
     using ViewCreator.Extensions;
     using ViewCreator.React;
+    using ViewCreator.React.Rendering;
     using ViewCreator.Rendering;
 
     public class TestApp : IApplicationBuilder
@@ -41,7 +42,7 @@
         {
             IServiceCollection services = new ServiceCollection();
 
-            IViewBuilder renderBuilder = services.AddReactViewCreator()
+            IReactViewBuilder renderBuilder = services.AddReactViewCreator()
                 .AddLayoutModelsFromAssembly(typeof(Program).Assembly)
                 .AddComponentRegister(new ReactComponentRegister())
                 .SetConfig(config => { config.MinifyEnabled = true; });
@@ -52,7 +53,7 @@
             testApp.ApplicationServices = serviceProvider;
             testApp.UseReactViewCreator();
 
-            StringBuilder stringBuilder = renderBuilder.GenerateBuilderFile(serviceProvider);
+            StringBuilder stringBuilder = renderBuilder.GenerateBuilderFile(serviceProvider, true);
 
             Console.WriteLine(stringBuilder.ToString());
         }

@@ -1,6 +1,7 @@
 ﻿namespace ViewCreator.TestMvc.Model
 {
     using ViewCreator.Components;
+    using ViewCreator.UI;
 
     [Button]
     public class LoginViewModel

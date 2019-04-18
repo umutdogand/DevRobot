@@ -1,0 +1,12 @@
+{
+  "name": "viewcreator",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "version": "",
+  "devDependencies": {
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4"
+  }
+}
