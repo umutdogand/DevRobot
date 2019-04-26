@@ -2,6 +2,7 @@
 {
     using Microsoft.Extensions.Caching.Memory;
     using System;
+    using System.Collections.Generic;
     using System.IO;
 
     public static class FileCache

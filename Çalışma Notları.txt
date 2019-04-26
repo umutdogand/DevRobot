@@ -1,0 +1,88 @@
+	# Multilingual iþi c# tarafýnda olacaktýr fakat react tarafýnda istek ile kontrol mekanizmasý olacaktýr.
+		Bu yapý interface deðiþtirilebilir olacaktýr DI ya uygun olarak
+
+ # C# tarafýnda ve react tarafýnda yapýlacaklarý maddeler
+
+	!	Tüm kodlarýn üzerinde detaylý açýklama olacaktýr.
+	!	Bu proje, react kullanmayan bir sisteme eklendiðinde de arka planda react çalýþsacak ve sistemi etkilemeyecek þekilde tasarlanmalýdýr.
+
+	? Componentler için Validation yönetimi geliþtirilmeli
+
+	*	UML Diagramý hazýrlanacak.
+
+	# .Net Core
+		*	View modellerin üzerine attribute olarak atama yapmak dýþýnda dinamik bir yönteme daha ihtiyaç duyulmaktadýr.
+			Üretilmiþ olan render larýn tekrar render edilip üretilebilir olmasýnýn yaný sýra, üretilme aþmasýnda bir fonksiyondan veya baþkabir yerden
+			veri çekilip attribute hazýrlanabilir. Bunun için bir interface aracýlýðý yapýlabiliir. Bu sayede attribute deðerleri otomatik oluþabilir.
+		*	Yetkilendirme için bir interface oluþtur. Render iþlemi (react class render deðil, yani HTML.Render ile props lar belirlenirken) sýrasýnda 
+			bu nesne her bir component için yetkilendirme kontolü yapar, render edilmemesi gereken nesneleri saklar. Bu saklama kýsmý react tarafýndadýr.
+		*	Generatefile cache edilecek
+		*	AddFileFounder ile JsxReactFileFounder ve TsxReactFileFounder
+		*	Tüm projeleri nuget paketi haline getir.
+		*	Base react dosyalarý projeye nuget node_modul olarak dahil olacaktýr. Fakat otomatik olarak oluþturulan dosya için temp olarak bir dosyaya kayýt edilip, gösterilmesi gerekir.
+			Tekrar render etme iþlemi mümkün olmalýdr. Bu durumda dosya yüklenip tekrar eklenip eklenemeyeceði kontrol edilecektir.
+		*	ViewCreator.React.JSBeautify ve ViewCreator.React.Minification elden geçirilecek.
+		*	Modeller render edilirkem Class isimleri kullanýlacak fakat eðer ayý isimde olan varsa diye custom edilebilir olacak
+		*	Render için component sýralamasý düzenlenebilecek.
+		*	Componentler için form elemanýdýr þeklinde bir ibare olmalý, bu sayede 'name' parametresi yoksa property adý eklenmelidir.
+		*	Componentler için birer description eklenebilir, bu sayede ekran hazýrlnýrken kullanýþlý olur. Description bir attribute olabilir.
+			Eðer attribute olursa, bir property için birden fazla attribute olacaðýndan, içerisine for elmaný ekleyerek kimin açýklamasý olduðunu belirtmek gerekir.
+		*	ReactViewCreatorExtension ile render fonksiyonu hazýrlanacaktýr.
+		*	React Render için genel bir render classý ile çözülmelidir.
+		*	Componentler tamamlandýktan sonra her bir component için özelleþtirme yaparak hazýr eleman eklenmesi saðlanacak.(Örnek; SquareButton, CircleButton vs)
+		*	Componentler için custom palet atanabilecek, ovveride edecek.
+
+	# React
+	
+		Pazartesi;
+		XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		
+		*	Template FeatureBase olacak. props.data fonksiyon olabilir olacaktýr. Template içinde template olabilir.
+			Template içindeki templateler yanlýzca featurebase gibi davranacak.
+		*	Container sýnýfý hazýrla. Içerisinde featurebase nesnesi, çoðunlukla template olacak.
+			Container, kendisine gelen data arrayi kadar nesneyi, içerisindeki türe göre üretecektir.
+			Tek bir çocuðu vardýr. Container FeatureBase dir. Üretilen data aktarýmý yapar.
+			Fonksiyonlarý kontrol et dizi verileri sorun çýkartmamalý.
+		*	Log mekanizmasý saðlanacak, LoggerFactory hazýrla, interface kullanýlarak loger nesnesi oluþturup redux içerisine atýcak.
+			componentDidCatch fonksiyonunu kontrol et. Ayrýca fonksiyonlarý kontorol et warning vermesi gereken yerler var
+		*	App içerisinde component bulma fonksiyonunu biraz þekillendir. Bir keyin altýndaki baþka keyi aratabilmeliyi (path gibi)
+			Mesela ':' ile baþlýyorsa key dir diyebiliriz.
+		*	Palette dinamik güncelleme yaparken forceUpdate denildiðinde layoutdaki componentDidMount fonksiyonunu dikkate al. Layout kendi componentlerini tekrar yüklüyor.
+			Eskileri çocuklarý temizle. unutma !!!
+		*	Layout adý container olacaktýr. Tek eleman içeren nesne türünde tek fark childin birden fazla kez tekrar edilmesi. bu yüzden.
+
+		Salý;
+		XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+		
+		*	React tarafýnda bir compoent göstermek için props deðerleri gereklidir. Client dinamik eklemek isterse sunucu tarafýndan bu veriler metadata olarak çekilebilmelidir.
+			Sunucu tarafýnda da bunu karþýlayabilen bir yapý gereklidir.
+		*	React tarafýnda yetki konrolü için, DI ya uygun, sunucuyla haberleþip cevap alabilecek bir yapý kurulmalý. FeatureBase DI ile bu interface i kullanan bir nesneye sahip olacak.
+		*	Projeyi npm modulu haline getir. Nuget paketi hazýrla.
+		*	React kodlarýný DevRobot a taþý.
+		
+		Çarþamba;
+		XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+		*	Tüm yapýlarýn testleri hazýrlanacak
+		*	Dinamik olarak UML üretimi ve tüm detaylý class ve function açýklamalarý
+		*	Login olmaya çalýþýrken baþarýz oldu. Hata gösterilecek, swal ile gösterilebilir veya model verisi güncellenerek component güncellenir. Bu durumu gerçekleþir.
+		*	Güzel bir login sayfasý
+
+	*	React UI
+
+		*	Üretilecek tasarýmlar css uyumlu olalýdýr. Yani, tasarým ile deðiþtirilmesi için belli bir formatta class isimlendirmesi gerekmektedir.
+			Böylece tasarým paleti deðiþtiðinde, componentler de deðiþecektir.
+		*	style olarak less kullanýlacak, bunun için less loader ayarý yapýlmalý
+
+
+	YAPILDI ( REACT )
+		*	Componentler için eventleri yakalayýp kontrol edebilmek için type belirtilebilir.
+		*	Palet yapýsýný bitir.
+		*	Template içerisinde, içerisindeki componentleri bulabilmek için, Property adýna göre, Component tipine göre ve anahtar adýna göre aratma yapýlabilecek fonksiyonlar olacaktýr
+		*	Template içerisine load methodu yap, içerisindeki realoader ý bulup yenilesin. Birden fazla reloader olabilir, bu yüzden key alsýn.
+		*	Child yapýsýndaki hatayý onar.
+		*	Tasarýmlarýn yaný sýra paletler olacaktýr. Her componentin paletleri olacak ve bu paletler componente yüklenecektir ve uygulacaktýr.
+			Paletler aslýnda css lerdir. Yüklü palete göre class isimlendirilmesi style deðiþecektir. 
+			Hazýr bir palet seti kullanýlacaðý gibi, kiþi kendi paletini ve setini de hazýrlayabilecek.
+		*	Template içerisinde elemanlar kolaylýkla bulunabilmelidir. Template mount olunca ViewCreatorApp içerisine kayýt olup, unmount olunca silinmelidir.
+
